@@ -22,7 +22,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         <div className="h-[2px] bg-[#772c47] mt-1 rounded-full w-full"></div>
       </motion.div>
 
-      <div className={`relative flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 m-3`}>
+      <div className={`relative flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 m-3 justify-between items-center`}>
         <motion.img 
           src={image} 
           className="w-full md:w-[500px] h-[300px] rounded-lg object-contain aspect-[4/3] p-2" 
@@ -34,7 +34,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         />
         
         <motion.div 
-          className="flex flex-col justify-center items-center md:items-start gap-y-5 text-center md:text-left"
+          className="flex flex-col justify-between items-center md:items-start gap-y-5 text-center md:text-left"
           initial={{ opacity: 0, x: al === 'left' ? 50 : -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
