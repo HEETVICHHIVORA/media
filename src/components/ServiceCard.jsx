@@ -8,14 +8,14 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
       className="flex flex-col m-5"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
       <motion.div 
         className="font1 relative"
         initial={{ opacity: 0, x: al === 'left' ? -50 : 50 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
       >
         <p className={`text-4xl md:text-6xl md:${al === 'left' ? 'text-left' : 'text-right'} text-center`}>{heading}</p>
@@ -29,7 +29,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
           alt="" 
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         />
         
@@ -37,7 +37,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
           className="flex flex-col justify-center items-center md:items-start gap-y-5 text-center md:text-left"
           initial={{ opacity: 0, x: al === 'left' ? 50 : -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <p className="font3 text-lg md:text-xl">{content}</p>

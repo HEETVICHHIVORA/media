@@ -134,12 +134,12 @@ export const Homepage = () => {
       <div className="relative flex overflow-hidden w-full mt-6">
         <motion.div
           className="flex items-center gap-6"
-          animate={{ x: ["0%", "-100%"] }}
+          animate={{ x: ["0%", "-50%"] }} // Move only half to avoid gaps
           transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           style={{ display: "flex", whiteSpace: "nowrap" }}
         >
-          {/* Duplicate logos to make it circular */}
-          {[...clients, ...clients].map((client, index) => (
+          {/* Triple duplication to ensure continuous flow */}
+          {[...clients, ...clients, ...clients].map((client, index) => (
             <div key={index} className="min-w-[120px] flex flex-col items-center">
               <img src={client.logo} alt={client.name} className="w-20 h-20" />
               <p className="text-[#772c47] mt-2">{client.name}</p>
@@ -147,6 +147,7 @@ export const Homepage = () => {
           ))}
         </motion.div>
       </div>
+
     </div>
     </div>
   );

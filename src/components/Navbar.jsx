@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className='font2 w-full h-[10%] bg-[#ffeecd] flex items-center justify-between p-4 shadow-md'>
       {/* Brand Name on the Left */}
-      <div className='text-[#772c47] font-bold text-3xl cursor-pointer' onClick={()=>{navigate('/')}}>Mediatryx</div>
+      <div className='text-[#772c47] font-bold text-3xl cursor-pointer' onClick={()=>{navigate('/')}}>MediAtryX</div>
 
       {/* Hamburger Menu for Mobile */}
       <div className='md:hidden' onClick={() => setIsOpen(!isOpen)}>

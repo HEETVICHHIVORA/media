@@ -68,12 +68,36 @@ export const Services = () => {
     <div className="color1 bgColor min-h-screen w-full">
       <Navbar />
 
-      <motion.p className='fontColor text-center font-bold text-4xl md:text-5xl font2 mt-5'
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-      >Our Services</motion.p>
+
+      <div className="w-full flex flex-col items-center mt-6 px-4 text-center">
+        {/* Animated Heading */}
+        <motion.h2
+          className="font2 text-4xl sm:text-5xl md:text-6xl text-[#772c47]"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Our <span className="font3 text-[#5a1f32]">Services</span>
+        </motion.h2>
+
+        {/* Animated Subheading */}
+        <motion.p
+          className="text-[#772c47] text-base sm:text-lg italic mt-2"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        >
+          Empowering businesses with top-notch solutions
+        </motion.p>
+
+        {/* Animated Divider Line */}
+        <motion.p
+          className="h-[2px] w-12 sm:w-16 bg-[#772c47] mt-2"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+        ></motion.p>
+      </div>
 
       <div className="font2 fontColor w-[90%] sm:w-[80%] mx-auto py-5 text-3xl sm:text-4xl flex flex-col gap-y-10">
         {services.map((service, index) => (
