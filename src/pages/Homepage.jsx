@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
@@ -16,6 +16,40 @@ export const Homepage = () => {
     'Paid Ads'
   ];
 
+  const clients = [
+    { name: 'Client 1', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 2', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 3', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 4', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 5', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 6', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 7', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 8', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 9', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 10', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 1', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 2', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 3', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 4', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 5', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 6', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 7', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 8', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 9', logo: 'https://via.placeholder.com/100' },
+    { name: 'Client 10', logo: 'https://via.placeholder.com/100' }
+  ];
+
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (marqueeRef.current) {
+        marqueeRef.current.scrollLeft += 1;
+      }
+    }, 10);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % expertiseWords.length);
@@ -26,6 +60,7 @@ export const Homepage = () => {
   return (
     <div>
       <Navbar />
+
       {/* Hero Section */}
       <div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start p-4'>
         <motion.div
@@ -53,6 +88,10 @@ export const Homepage = () => {
         </motion.div>
       </div>
 
+      <div className='w-full flex justify-center bg-[#ffeecd]'>
+        <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
+      </div>
+
       {/* Our Mission Section */}
       <div className='font3 w-full bg-[#ffeecd] p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0'>
         <motion.div
@@ -62,7 +101,7 @@ export const Homepage = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true }}
         >
-          <h2 className='text-4xl md:text-5xl font-bold mb-4'>Our Mission</h2>
+          <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Mission</span></h2>
           <p className='text-lg md:text-xl leading-relaxed'>
             To provide end-to-end services for all your Investor Relations (IR), Public Relations (PR),
             and investment-related activities, ensuring compliance with SEBI guidelines.
@@ -79,20 +118,26 @@ export const Homepage = () => {
         </motion.div>
       </div>
 
-      {/* Our Expertise Section */}
-      <div className='w-full bg-[#ffeecd] p-8 flex flex-col items-center'>
-        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Expertise</span></h2>
-        <motion.div
-          className='text-[#772c47] text-2xl md:text-4xl mt-8'
-          key={currentIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          {expertiseWords[currentIndex]}
-        </motion.div>
+      <div className='w-full flex justify-center bg-[#ffeecd]'>
+        <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
       </div>
+
+      {/* Clientele Section */}
+      <div className='w-full bg-[#ffeecd] p-8'>
+        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Clientele</span></h2>
+        <div
+          className='flex items-center overflow-x-auto gap-6 mt-6 no-scrollbar whitespace-nowrap'
+          ref={marqueeRef}
+        >
+          {clients.map((client, index) => (
+            <div key={index} className='min-w-[100px] flex flex-col items-center'>
+              <img src={client.logo} alt={client.name} className='w-20 h-20' />
+              <p className='text-[#772c47] mt-2'>{client.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 };
