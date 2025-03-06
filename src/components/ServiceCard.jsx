@@ -22,10 +22,10 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         <div className="h-[2px] bg-[#772c47] mt-1 rounded-full w-full"></div>
       </motion.div>
 
-      <div className={`flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 mt-3`}>
+      <div className={`flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 m-3`}>
         <motion.img 
           src={image} 
-          className="w-full md:w-1/2 rounded-lg" 
+          className="w-full md:w-[50%] h-auto rounded-lg" 
           alt="" 
           initial={{ scale: 0.9, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -40,10 +40,11 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <p className="font3 text-lg">{content}</p>
+          <p className="font3 text-lg md:text-xl">{content}</p>
           <UseServiceButton routeName={routeName} />
         </motion.div>
       </div>
     </motion.div>
   )
 }
+
