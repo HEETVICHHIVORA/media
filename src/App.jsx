@@ -6,7 +6,7 @@ import { Services } from './pages/Services'
 function App() {
 
   return (
-    <div>
+    <div className='w-screen h-screen'>
       <Routes>
         <Route path="/" element={<Homepage/>} />
         <Route path="/services" element={<Services/>} />
