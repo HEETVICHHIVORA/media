@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { ServiceCard } from '../components/ServiceCard'
+import {motion} from 'framer-motion'
 
 export const Services = () => {
 
@@ -36,7 +37,7 @@ export const Services = () => {
     {
       al: "left",
       heading:"PPC Advertising",
-      image: "webDesign.png",
+      image: "PPC-Advertising.png",
       content:"Pay-Per-Click (PPC) advertising is an effective way to drive targeted traffic to your website. Our PPC services include creating and managing campaigns on platforms like social media. We focus on optimizing your ad spend to achieve the highest return on investment (ROI). Our team continuously monitors and adjusts your campaigns to ensure optimal performance, helping you reach your target audience and achieve your marketing goals.",
       routeName: "/ppc-advertising"
     },
@@ -50,14 +51,14 @@ export const Services = () => {
     {
       al: "left",
       heading:"Analytics & Reporting",
-      image: "webDesign.png",
+      image: "anr.png",
       content:"Data is at the heart of our digital marketing strategies. Our analytics and reporting services provide you with detailed insights into your marketing performance. We track key metrics, analyze user behavior, and measure the effectiveness of your campaigns. By translating data into actionable insights, we help you make informed decisions and continuously optimize your marketing efforts to achieve better results.",
       routeName: "/analytics-report"
     },
     {
       al: "right",
       heading:"Conversion Optimization",
-      image: "webDesign.png",
+      image: "conv.png",
       content:"We turn visitors into customers by improving your website's user experience. Our conversion optimization services include analyzing user behavior, identifying barriers, and implementing strategies like A/B testing to enhance site performance and increase conversion rates.",
       routeName: "/consulting-training"
     }
@@ -66,6 +67,13 @@ export const Services = () => {
   return (
     <div className="color1 bgColor min-h-screen w-full">
       <Navbar />
+
+      <motion.p className='fontColor text-center font-bold text-4xl md:text-5xl font2 mt-5'
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+      >Our Services</motion.p>
 
       <div className="font2 fontColor w-[90%] sm:w-[80%] mx-auto py-5 text-3xl sm:text-4xl flex flex-col gap-y-10">
         {services.map((service, index) => (

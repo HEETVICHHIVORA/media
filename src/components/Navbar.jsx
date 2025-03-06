@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate=useNavigate();
 
   return (
     <div className='font2 w-full h-[10%] bg-[#ffeecd] flex items-center justify-between p-4 shadow-md'>
       {/* Brand Name on the Left */}
-      <div className='text-[#772c47] font-bold text-xl'>Mediatryx</div>
+      <div className='text-[#772c47] font-bold text-3xl cursor-pointer' onClick={()=>{navigate('/')}}>Mediatryx</div>
 
       {/* Hamburger Menu for Mobile */}
       <div className='md:hidden' onClick={() => setIsOpen(!isOpen)}>
@@ -18,7 +20,7 @@ const Navbar = () => {
       {/* Links for Desktop View on the Right */}
       <div className='font3 hidden md:flex space-x-8 text-[#772c47] ml-auto font-thin'>
         <a href='#about' className='hover:text-opacity-70'>About</a>
-        <a href='#services' className='hover:text-opacity-70'>Services</a>
+        <a href='/services' className='hover:text-opacity-70'>Services</a>
         <a href='#contact' className='hover:text-opacity-70'>Contact Us</a>
       </div>
 
