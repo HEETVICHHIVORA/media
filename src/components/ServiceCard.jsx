@@ -22,7 +22,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         <div className="h-[2px] bg-[#772c47] mt-1 rounded-full w-full"></div>
       </motion.div>
 
-      <div className={`flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 p-6`}>
+      <div className={`flex flex-col md:flex-row ${al === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 mt-3`}>
         <motion.img 
           src={image} 
           className="w-full md:w-1/2 rounded-lg" 
