@@ -123,21 +123,31 @@ export const Homepage = () => {
       </div>
 
       {/* Clientele Section */}
-      <div className='w-full bg-[#ffeecd] p-8'>
-        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Clientele</span></h2>
-        <div
-          className='flex items-center overflow-x-auto gap-6 mt-6 no-scrollbar whitespace-nowrap'
-          ref={marqueeRef}
+     
+
+      <div className='w-full bg-[#ffeecd] p-8 overflow-hidden'>
+      <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>
+        Our <span className='font3'>Clientele</span>
+      </h2>
+
+      {/* Marquee Wrapper */}
+      <div className="relative flex overflow-hidden w-full mt-6">
+        <motion.div
+          className="flex items-center gap-6"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+          style={{ display: "flex", whiteSpace: "nowrap" }}
         >
-          {clients.map((client, index) => (
-            <div key={index} className='min-w-[100px] flex flex-col items-center'>
-              <img src={client.logo} alt={client.name} className='w-20 h-20' />
-              <p className='text-[#772c47] mt-2'>{client.name}</p>
+          {/* Duplicate logos to make it circular */}
+          {[...clients, ...clients].map((client, index) => (
+            <div key={index} className="min-w-[120px] flex flex-col items-center">
+              <img src={client.logo} alt={client.name} className="w-20 h-20" />
+              <p className="text-[#772c47] mt-2">{client.name}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
-
+    </div>
     </div>
   );
 };

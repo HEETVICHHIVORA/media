@@ -15,21 +15,21 @@ export const Services = () => {
     {
       al: "right",
       heading: "SEO Optimization",
-      image: "webDesign.png",
+      image: "seo.png",
       content: "Search Engine Optimization (SEO) is at the core of our digital marketing strategy. Our SEO services aim to increase your website’s visibility on search engines, driving organic traffic and improving your online presence. We conduct thorough keyword research, optimize your website’s content and structure, and implement effective link-building strategies. Our goal is to help you rank higher on search engines, attract more visitors, and convert them into loyal customers.",
       routeName: "/seo-opt"
     },
     {
       al: "left",
       heading: "Content Creation",
-      image: "webDesign.png",
+      image: "content_crt.png",
       content: "Compelling content is key to engaging your audience and driving conversions. Our content creation services include crafting high-quality blog posts, articles, social media updates, and multimedia content that resonate with your target audience. We focus on creating content that not only informs and entertains but also aligns with your brand’s voice and objectives. By consistently delivering valuable content, we help you build trust and authority in your industry.",
       routeName: "/content-creation"
     },
     {
       al: "right",
       heading:"Social Media",
-      image: "webDesign.png",
+      image: "social_med.png",
       content:"Social media connects you with your audience and builds brand awareness. Our services include strategy development, content creation, community management, and paid advertising tailored to each platform. We ensure your brand message is consistent and engaging, maximizing reach and impact through analytics and audience interaction.",
       routeName: "/social-media"
     },
@@ -43,7 +43,7 @@ export const Services = () => {
     {
       al: "right",
       heading:"Email Marketing",
-      image: "webDesign.png",
+      image: "email_markt.png",
       content:"Email marketing nurtures leads and engages your audience. Our services cover strategy, list management, and personalized campaigns. We create automated email sequences to deliver timely messages, analyze performance, and optimize content to build strong subscriber relationships and drive conversions.",
       routeName: "/email-marketing"
     },
