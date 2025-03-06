@@ -64,7 +64,7 @@ export const Homepage = () => {
       {/* Hero Section */}
       <div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start p-4'>
         <motion.div
-          className='text-left'
+          className='text-left w-[90%] mx-auto'
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -121,7 +121,20 @@ export const Homepage = () => {
       <div className='w-full flex justify-center bg-[#ffeecd]'>
         <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
       </div>
-
+            {/* Our Expertise Section */}
+            <div className='w-full bg-[#ffeecd] p-8 flex flex-col items-center'>
+        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Expertise</span></h2>
+        <motion.div
+          className='text-[#772c47] text-2xl md:text-4xl mt-8'
+          key={currentIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
+          {expertiseWords[currentIndex]}
+        </motion.div>
+      </div>
       {/* Clientele Section */}
      
 
