@@ -18,7 +18,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className={`text-4xl md:text-6xl md:${al === 'left' ? 'text-left' : 'text-right'} text-center`}>{heading}</p>
+        <p className={`text-4xl md:text-6xl ${al === 'left' ? 'text-left' : 'text-right'} text-center`}>{heading}</p>
         <div className="h-[2px] bg-[#772c47] mt-1 rounded-full w-full"></div>
       </motion.div>
 
