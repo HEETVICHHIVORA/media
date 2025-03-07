@@ -35,7 +35,7 @@ const Navbar = () => {
             className='absolute top-[10%] left-0 w-full bg-[#ffeecd] flex flex-col items-center space-y-4 p-4 shadow-lg md:hidden z-50 font-thin'
           >
             <a href='#about' className='text-[#772c47]' onClick={() => setIsOpen(false)}>About</a>
-            <a href='#services' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Services</a>
+            <a href='/services' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Services</a>
             <a href='#contact' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Contact Us</a>
           </motion.div>
         )}

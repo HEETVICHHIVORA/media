@@ -60,86 +60,129 @@ export const Homepage = () => {
   return (
     <div>
       <Navbar />
+{/* Hero Section */}
+<div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start p-4'>
+  <div className='w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between'>
+    {/* Text on the Left */}
+    <motion.div
+      className='text-left w-full md:w-1/2'
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
+        <Typewriter
+          options={{
+            strings: ['Grow', 'Advertise', 'Expand'],
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 50,
+          }}
+        />
+      </h1>
+      <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
+        with
+      </h1>
+      <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
+        Mediatryx
+      </h1>
 
-      {/* Hero Section */}
-      <div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start p-4'>
-        <motion.div
-          className='text-left w-[90%] mx-auto'
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
-            <Typewriter
-              options={{
-                strings: ['Grow', 'Advertise', 'Expand'],
-                autoStart: true,
-                loop: true,
-                deleteSpeed: 50,
-              }}
-            />
-          </h1>
-          <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
-            with
-          </h1>
-          <h1 className='text-[#772c47] text-5xl md:text-7xl font-bold leading-tight'>
-            Mediatryx
-          </h1>
-        </motion.div>
-      </div>
+      {/* Explore Our Services Button */}
+      <a
+        href="/services"
+        className='inline-block mt-8 px-8 py-3 bg-[#772c47] text-[#ffeecd] font3 text-lg rounded-lg hover:bg-opacity-90 transition-all'
+      >
+        Explore Our Services
+      </a>
+    </motion.div>
 
-      <div className='w-full flex justify-center bg-[#ffeecd]'>
-        <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
-      </div>
+    {/* Image on the Right (Hidden on Mobile) */}
+    <motion.div
+      className='w-full md:w-1/2 flex items-center justify-center hidden md:block'
+      initial={{ y: 0 }}
+      animate={{ y: [0, -20, 0] }} // Slight up-and-down motion
+      transition={{
+        duration: 2, // Duration of one loop
+        repeat: Infinity, // Loop infinitely
+        ease: 'easeInOut', // Smooth easing
+      }}
+    >
+      <img 
+        src="/herosection.png" 
+        alt="Hero Section" 
+        className='w-full h-auto max-w-lg object-cover'
+      />
+    </motion.div>
+  </div>
+</div>
 
-      {/* Our Mission Section */}
-      <div className='font3 w-full bg-[#ffeecd] p-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0'>
-        <motion.div
-          className='text-[#772c47] max-w-2xl'
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          viewport={{ once: true }}
-        >
-          <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Mission</span></h2>
-          <p className='text-lg md:text-xl leading-relaxed'>
-            To provide end-to-end services for all your Investor Relations (IR), Public Relations (PR),
-            and investment-related activities, ensuring compliance with SEBI guidelines.
-          </p>
-        </motion.div>
-        <motion.div
-          className='w-full md:w-1/2 h-64 bg-[#772c47] bg-opacity-20 flex items-center justify-center'
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          viewport={{ once: true }}
-        >
-          <p className='text-[#772c47] text-xl'>Photo Placeholder</p>
-        </motion.div>
-      </div>
+<div className='w-full flex justify-center bg-[#ffeecd]'>
+  <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
+</div>
 
-      <div className='w-full flex justify-center bg-[#ffeecd]'>
-        <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
-      </div>
-            {/* Our Expertise Section */}
-            <div className='w-full bg-[#ffeecd] p-8 flex flex-col items-center'>
-        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Expertise</span></h2>
-        <motion.div
-          className='text-[#772c47] text-2xl md:text-4xl mt-8'
-          key={currentIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-        >
-          {expertiseWords[currentIndex]}
-        </motion.div>
-      </div>
+{/* <div className='w-full flex justify-center bg-[#ffeecd]'>
+  <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
+</div> */}
+
+{/* Our Mission Section */}
+<div className='font3 w-full bg-[#ffeecd] p-8'>
+  <div className='w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0'>
+    <motion.div
+      className='text-[#772c47] max-w-2xl w-full md:w-auto'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
+      <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Mission</span></h2>
+      <p className='text-lg md:text-xl leading-relaxed'>
+        To provide end-to-end services for all your Investor Relations (IR), Public Relations (PR),
+        and investment-related activities, ensuring compliance with SEBI guidelines.
+      </p>
+    </motion.div>
+    <motion.div
+      className='w-full md:w-1/2 h-64 flex items-center justify-center mt-6 md:mt-0'
+      initial={{ scale: 0.8, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
+      {/* Image */}
+      <img 
+        src="/ourmission.png" 
+        alt="Our Mission" 
+        className='w-full h-full object-cover' 
+      />
+    </motion.div>
+  </div>
+</div>
+
+
+
+<div className='w-full flex justify-center bg-[#ffeecd]'>
+  <div className='w-50 h-[2px] bg-[#772c47] opacity-70'></div>
+</div>
+
+{/* Our Expertise Section */}
+<div className='w-full bg-[#ffeecd] p-8 flex flex-col items-center'>
+  <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Our <span className='font3'>Expertise</span></h2>
+  <motion.div
+    className='text-[#772c47] text-2xl md:text-4xl mt-8'
+    key={currentIndex}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.5, ease: 'easeOut' }}
+  >
+    {expertiseWords[currentIndex]}
+  </motion.div>
+</div>
       {/* Clientele Section */}
      
 
       <div className='w-full bg-[#ffeecd] p-8 overflow-hidden'>
-      <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>
+        <div className='w-[90%] mx-auto'>
+        <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>
         Our <span className='font3'>Clientele</span>
       </h2>
 
@@ -160,8 +203,59 @@ export const Homepage = () => {
           ))}
         </motion.div>
       </div>
+        </div>
+      
 
     </div>
+    {/* Contact Us Section */}
+<div className='w-full bg-[#ffeecd] p-8'>
+  <div className='w-[90%] mx-auto'>
+    {/* Heading */}
+    <h2 className='font2 text-4xl md:text-5xl text-[#772c47]'>Get <span className='font3'>in touch</span></h2>
+
+    {/* Content */}
+    <div className='mt-8 flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-8'>
+      {/* Image (Hidden on Mobile) */}
+      <div className='w-full md:w-1/2 hidden md:block'>
+        <img 
+          src="/contactus.png" 
+          alt="Contact Us" 
+          className='w-full h-auto object-cover rounded-lg'
+        />
+      </div>
+
+      {/* Input Fields */}
+      <div className='w-full md:w-1/2 space-y-6'>
+        <input
+          type="text"
+          placeholder="Name"
+          className='w-full p-3 rounded-lg border border-[#772c47] bg-transparent placeholder-[#772c47] font3 focus:outline-none focus:ring-2 focus:ring-[#772c47]'
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          className='w-full p-3 rounded-lg border border-[#772c47] bg-transparent placeholder-[#772c47] font3 focus:outline-none focus:ring-2 focus:ring-[#772c47]'
+        />
+        <input
+          type="text"
+          placeholder="Subject"
+          className='w-full p-3 rounded-lg border border-[#772c47] bg-transparent placeholder-[#772c47] font3 focus:outline-none focus:ring-2 focus:ring-[#772c47]'
+        />
+        <textarea
+          placeholder="Your Query"
+          rows={4}
+          className='w-full p-3 rounded-lg border border-[#772c47] bg-transparent placeholder-[#772c47] font3 focus:outline-none focus:ring-2 focus:ring-[#772c47]'
+        />
+        <button
+          type="submit"
+          className='w-full md:w-auto px-6 py-3 bg-[#772c47] text-[#ffeecd] font3 rounded-lg hover:bg-opacity-90 transition-all'
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
