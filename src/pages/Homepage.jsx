@@ -61,7 +61,7 @@ export const Homepage = () => {
     <div>
       <Navbar />
 {/* Hero Section */}
-<div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start p-4'>
+<div className='font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start'>
   <div className='w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between'>
     {/* Text on the Left */}
     <motion.div
@@ -97,8 +97,8 @@ export const Homepage = () => {
     </motion.div>
 
     {/* Image on the Right (Hidden on Mobile) */}
-    <motion.div
-      className='w-full md:w-1/2 flex items-center justify-center hidden md:block'
+    {/* <motion.div
+      className='w-full md:w-1/2 items-center justify-center hidden md:block'
       initial={{ y: 0 }}
       animate={{ y: [0, -20, 0] }} // Slight up-and-down motion
       transition={{
@@ -112,7 +112,15 @@ export const Homepage = () => {
         alt="Hero Section" 
         className='w-full h-auto max-w-lg object-cover'
       />
-    </motion.div>
+    </motion.div> */}
+
+    <div className='w-full md:w-1/2 items-center justify-center hidden md:flex'>
+    <img 
+        src="/herosection.png" 
+        alt="Hero Section" 
+        className='w-full h-auto max-w-lg object-contain scale-120'
+      />
+    </div>
   </div>
 </div>
 

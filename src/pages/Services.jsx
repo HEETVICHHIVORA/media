@@ -44,7 +44,7 @@ export const Services = () => {
     {
       al: "right",
       heading:"Email Marketing",
-      image: "email_markt.png",
+      image: "email_marketing.png",
       content:"Email marketing nurtures leads and engages your audience. Our services cover strategy, list management, and personalized campaigns. We create automated email sequences to deliver timely messages, analyze performance, and optimize content to build strong subscriber relationships and drive conversions.",
       routeName: "/email-marketing"
     },
