@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-
+import BlogCard from '../components/BlogCard';
 export const Homepage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const expertiseWords = [
@@ -207,6 +207,50 @@ export const Homepage = () => {
       
 
     </div>
+  {/* Blog Cards Section */}
+<div className='w-full bg-[#ffeecd] py-12'>
+  <div className='w-[90%] mx-auto'>
+    {/* Heading */}
+    <h2 className='font2 text-4xl md:text-5xl text-[#772c47] text-center mb-8'>
+      Latest Blogs
+    </h2>
+
+    {/* Blog Cards Grid */}
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+      {/* Blog Card 1 */}
+      <BlogCard
+        id='1'
+        title='How to Grow Your Business'
+        photo='/ws1.png'
+        content='Learn the best strategies to grow your business and reach new heights. Whether you are a startup or an established business, these tips will help you scale effectively...'
+      />
+
+      {/* Blog Card 2 */}
+      <BlogCard
+        id='2'
+        title='The Power of Advertising'
+        photo='/ws1.png'
+        content='Advertising is a powerful tool to increase brand awareness and drive sales. Discover how to create impactful campaigns that resonate with your audience...'
+      />
+
+      {/* Blog Card 3 */}
+      <BlogCard
+        id='3'
+        title='Expanding Your Market Reach'
+        photo='/ws1.png'
+        content='Expanding your market reach is essential for long-term success. Explore the steps you need to take to enter new markets and attract a global audience...'
+      />
+
+      {/* Blog Card 4 */}
+      <BlogCard
+        id='4'
+        title='Effective Investor Relations'
+        photo='/ws1.png'
+        content='Building strong relationships with investors is key to securing funding and growing your business. Learn how to communicate effectively and build trust...'
+      />
+    </div>
+  </div>
+</div>
     {/* Contact Us Section */}
 <div className='w-full bg-[#ffeecd] p-8'>
   <div className='w-[90%] mx-auto'>
