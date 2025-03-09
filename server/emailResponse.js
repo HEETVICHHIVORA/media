@@ -12,7 +12,7 @@ module.exports = (name) => {
                 We appreciate your inquiry and are excited to assist you! Our team has received your request and will get back to you <strong>as soon as possible.</strong>  
             </p>
 
-            <div style="margin: 20px 0; background-color: #ffd700; color: #004080; padding: 15px; 
+            <div style="margin: 20px 0; background-color: #004080; color: white; padding: 15px; 
                         border-radius: 8px; font-size: 16px; font-weight: bold;">
                 <p style="margin: 0;">If you have urgent queries, feel free to reply to this email, and we’ll prioritize your request.</p>
             </div>
