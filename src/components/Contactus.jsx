@@ -40,10 +40,10 @@ const Contactus = () => {
           const data = await res.json();
           if (data.success) {
             alert("Email Sent Successfully");
-            // setname("");
-            // setemail("");
-            // setsubject("");
-            // setmessage("");
+            setname("");
+            setemail("");
+            setsubject("");
+            setmessage("");
           } else {
             alert("Error in sending email");
           }
