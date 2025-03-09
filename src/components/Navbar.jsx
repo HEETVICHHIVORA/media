@@ -18,10 +18,10 @@ const Navbar = () => {
       </div>
 
       {/* Links for Desktop View on the Right */}
-      <div className='font3 hidden md:flex space-x-8 text-[#772c47] ml-auto font-thin'>
-        <a href='#about' className='hover:text-opacity-70'>About</a>
-        <a href='/services' className='hover:text-opacity-70'>Services</a>
-        <a href='#contact' className='hover:text-opacity-70'>Contact Us</a>
+      <div className='font3 hidden md:flex space-x-8 text-[#772c47] ml-auto'>
+        <a href='#about' className='text-xl'>About</a>
+        <a href='/services' className='text-xl'>Services</a>
+        <a href='#contact' className='text-xl'>Contact Us</a>
       </div>
 
       {/* Mobile Menu with Animation */}
