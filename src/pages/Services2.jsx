@@ -123,7 +123,7 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="font2 fontColor text-4xl sm:text-5xl font-bold text-black mb-6">Content Marketing</h2>
+          <h2 className="font2 fontColor text-4xl sm:text-5xl font-bold text-black mb-6 text-center">Content Marketing</h2>
           <div className="bg-[#772c47] text-white p-6 sm:p-8 rounded-lg shadow-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg">
               {[
@@ -183,7 +183,7 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold font2 fontColor sm:w-1/3">Influencer Marketing</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold font2 fontColor sm:w-1/3 text-center">Influencer Marketing</h2>
           <div className="sm:w-2/3 w-full bg-amber-200/[0.3] rounded-md shadow-md font3 fontColor">
             <ul className="text-lg">
               {[

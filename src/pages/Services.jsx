@@ -9,7 +9,7 @@ export const Services = () => {
     {
       al: "left",
       heading: "Web Design",
-      image: "webDesign.png",
+      image: "web_design.png",
       content: "Your website is often the first impression potential customers have of your business. Our web design services focus on creating visually appealing, user-friendly, and responsive websites that reflect your brand and engage your audience. We prioritize functionality and aesthetics, ensuring that your website not only looks great but also provides a seamless user experience. Our goal is to convert visitors into customers through effective design and intuitive navigation.",
       routeName: "/web-design"
     },
@@ -30,13 +30,13 @@ export const Services = () => {
     {
       al: "right",
       heading:"Social Media",
-      image: "social_med.png",
+      image: "social_media.png",
       content:"Social media connects you with your audience and builds brand awareness. Our services include strategy development, content creation, community management, and paid advertising tailored to each platform. We ensure your brand message is consistent and engaging, maximizing reach and impact through analytics and audience interaction.",
       routeName: "/social-media"
     },
     {
       al: "left",
-      heading:"PPC Advertising",
+      heading:`PPC Advertising`,
       image: "PPC-Advertising.png",
       content:"Pay-Per-Click (PPC) advertising is an effective way to drive targeted traffic to your website. Our PPC services include creating and managing campaigns on platforms like social media. We focus on optimizing your ad spend to achieve the highest return on investment (ROI). Our team continuously monitors and adjusts your campaigns to ensure optimal performance, helping you reach your target audience and achieve your marketing goals.",
       routeName: "/ppc-advertising"
@@ -51,14 +51,14 @@ export const Services = () => {
     {
       al: "left",
       heading:"Analytics & Reporting",
-      image: "anr.png",
+      image: "analysis.png",
       content:"Data is at the heart of our digital marketing strategies. Our analytics and reporting services provide you with detailed insights into your marketing performance. We track key metrics, analyze user behavior, and measure the effectiveness of your campaigns. By translating data into actionable insights, we help you make informed decisions and continuously optimize your marketing efforts to achieve better results.",
       routeName: "/analytics-report"
     },
     {
       al: "right",
       heading:"Conversion Optimization",
-      image: "conv.png",
+      image: "conversion.png",
       content:"We turn visitors into customers by improving your website's user experience. Our conversion optimization services include analyzing user behavior, identifying barriers, and implementing strategies like A/B testing to enhance site performance and increase conversion rates.",
       routeName: "/consulting-training"
     }

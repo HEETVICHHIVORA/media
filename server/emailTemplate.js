@@ -1,4 +1,4 @@
-module.exports = (name, email, message) => {
+module.exports = (name, email,message, phno) => {
     return `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; 
                     border: 1px solid #ddd; border-radius: 10px; background-color: #f9f9f9;">
@@ -7,6 +7,7 @@ module.exports = (name, email, message) => {
             
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #007bff;">${email}</a></p>
+            <p><strong>Phone Number:</strong> ${phno ? phno : "Not provided by user"}</p>
             
             <h3 style="color: #333;">Message:</h3>
             <p style="background-color: #eee; padding: 10px; border-radius: 5px;">${message}</p>
