@@ -54,15 +54,6 @@ img{
     -webkit-appearance: none;
     margin: 0;
   }
-  .no-arrows {
-    -moz-appearance: textfield;
-  }
 
-  @layer base {
-    html, body {
-      @apply h-full overflow-x-hidden;
-    }
-  }
-  
 
   
