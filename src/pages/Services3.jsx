@@ -147,7 +147,7 @@ export const Services3 = () => {
       <Navbar />
 
 
-      <div className="w-full flex flex-col items-center mt-6 px-4 text-center">
+      <div className="w-full flex flex-col items-center px-4 text-center">
         {/* Animated Heading */}
         <motion.h2
           className="font2 text-4xl sm:text-5xl md:text-6xl text-[#772c47]"

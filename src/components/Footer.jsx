@@ -5,7 +5,8 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#772c48] text-[#ffeecd] shadow-black w-screen overflow-hidden py-5 px-5 mt-5">
+    <footer className="bg-[#772c48] text-[#ffeecd] p-4">
+
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
         
         {/* Location Section */}
@@ -19,9 +20,8 @@ const Footer = () => {
           © 2025 Mediatryx - Best Digital Agency in Mumbai, India. All rights reserved.
         </p>
 
-        {/* Placeholder for Future Links or Social Icons */}
+        {/* Add social media or other links here if needed */}
         <div className="flex items-center gap-4">
-          {/* Add social media or other links here if needed */}
           <FaInstagram className='text-2xl'/>
           <FaLinkedin className='text-2xl'/>
         </div>
