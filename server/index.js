@@ -5,6 +5,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const nodemailer = require('nodemailer');
 const emailTemplate = require('./emailTemplate');
+const emailResponse = require('./emailResponse');
 
 app.use(cors({
     origin: "http://localhost:5173",
@@ -18,7 +19,7 @@ app.listen(PORT, () => {
 
 
 
-const mailsender = async (name,email, title, message) => {
+const mailsender = async (name,email, title, message,phno) => {
     try {
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -34,8 +35,17 @@ const mailsender = async (name,email, title, message) => {
             from: email,
             to: process.env.MAIL_USER,
             subject: title,
-            html: emailTemplate(name,email,message),
+            html: emailTemplate(name,email,message,phno),
         });
+
+        if(info){
+            await transporter.sendMail({
+                from: process.env.MAIL_USER,
+                to: email,
+                subject: "Thank you for contacting us",
+                html: emailResponse(name),
+            });
+        }
 
         // console.log(info);
     } catch (e) {
@@ -45,8 +55,9 @@ const mailsender = async (name,email, title, message) => {
 
 app.post('/sendmail', (req, res) => {
     try{
-        const {name,email,subject,message} = req.body;
-        mailsender(name,email,subject,message);
+        const {name,email,subject,message,phno} = req.body;
+        console.log(name,email,subject,message,phno);
+        mailsender(name,email,subject,message,phno);
         res.status(200).json({success:true,message: "Email Sent"});
     }
     catch(e){

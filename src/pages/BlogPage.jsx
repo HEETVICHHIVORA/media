@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 // Mock data for blogs (replace with your actual data source)
 const blogs = [
@@ -41,8 +41,17 @@ const BlogPage = () => {
   }
 
   return (
-    <div className='w-full bg-[#ffeecd] py-12'>
-      <div className='w-[90%] mx-auto'>
+    <div className="w-full bg-[#fff7e6] py-12 h-full">
+      <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-white rounded-lg shadow-lg">
+
+        {/* Back Button */}
+        <button 
+          className="mb-6 text-[#772c47] font-semibold text-lg flex items-center gap-2 hover:text-[#5a1d33] transition-all"
+          onClick={() => navigate(-1)}
+        >
+          ← Back
+        </button>
+
         {/* Blog Title */}
         <h1 className='font2 text-4xl md:text-5xl text-[#772c47] text-center mb-8'>
           {blog.title}
@@ -53,7 +62,7 @@ const BlogPage = () => {
           <img
             src={blog.photo}
             alt={blog.title}
-            className='w-full h-full object-cover'
+            className="w-full h-full object-cover"
           />
         </div>
 
