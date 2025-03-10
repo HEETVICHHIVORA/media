@@ -4,6 +4,7 @@ import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import BlogCard from "../components/BlogCard";
 import Contactus from "../components/Contactus";
+import Footer from "../components/Footer";
 
 export const Homepage = () => {
   
@@ -62,7 +63,7 @@ export const Homepage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bgColor">
       <Navbar />
       {/* Hero Section */}
       <div className="font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start">
@@ -109,6 +110,22 @@ export const Homepage = () => {
               className="w-full h-auto max-w-lg object-contain scale-120"
             />
           </div>
+          {/* <motion.div
+      className='w-full md:w-1/2 flex items-center justify-center'
+      initial={{ y: 0 }}
+      animate={{ y: [0, -20, 0] }} // Slight up-and-down motion
+      transition={{
+        duration: 2, // Duration of one loop
+        repeat: Infinity, // Loop infinitely
+        ease: 'easeInOut', // Smooth easing
+      }}
+    >
+      <img 
+        src="/herosection.png" 
+        alt="Hero Section" 
+        className='w-full h-auto max-w-lg object-cover'
+      />
+    </motion.div> */}
         </div>
       </div>
 
@@ -255,7 +272,7 @@ export const Homepage = () => {
       </div>
 
       <Contactus />
-
+      <Footer/>
 
 
     </div>

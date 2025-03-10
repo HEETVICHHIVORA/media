@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'; 
+import { useParams } from 'react-router-dom';
 import {toast} from 'sonner'
 
-const Contactus = () => {
+export const Contactus = () => {
+    const {service}=useParams();
     const [name, setname] = useState("");
       const [email, setemail] = useState("");
-      const [subject, setsubject] = useState("");
+      const [subject, setsubject] = useState(service || "");
       const [message, setmessage] = useState("");
       const [phno,setphno] = useState("");
+      
     
       const isValidEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return emailRegex.test(email);
       };
+
+      useEffect(() => {
+        const updatedSubject = subject.split('-').join(' ');
+        setsubject(updatedSubject);
+    }, [subject]);
+    
     
       async function sendmail() {
         try {
@@ -59,7 +68,7 @@ const Contactus = () => {
       }
 
   return (
-      <div className="w-full bg-[#ffeecd] p-8">
+      <div className="w-full h-full bg-[#ffeecd] py-2">
         <div className="w-[90%] mx-auto">
           {/* Heading */}
           <h2 className="font2 text-4xl lg:text-5xl text-[#772c47]">
@@ -121,11 +130,8 @@ const Contactus = () => {
                 className="cursor-pointer w-full lg:w-auto px-6 py-3 bg-[#772c47] text-[#ffeecd] font3 rounded-lg hover:bg-opacity-90 transition"
                 onClick={sendmail}
               >
-                Submit 
-              </button> 
-               <p className='font3 text-xl fontColor flex flex-col sm:flex-row text-center sm:items-center items-end gap-y-3 gap-x-1'>
-                <span className='font2 text-2xl mx-auto'>OR</span>  Reach us out at marketing@mediatryx.com <span className='mx-auto'><img className='h-[30px]' src="msgbox.png" alt="" /></span> 
-               </p>
+                Submit
+              </button>
             </div>
           </div>
         </div>
@@ -133,5 +139,3 @@ const Contactus = () => {
   )
 }
 
-export default Contactus;
-3

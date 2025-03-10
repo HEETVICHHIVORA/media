@@ -35,19 +35,23 @@ const blogs = [
 const BlogPage = () => {
   const { id } = useParams(); // Get the blog ID from the URL
   const blog = blogs.find((blog) => blog.id === id); // Find the blog by ID
+  const navigate = useNavigate();
 
   if (!blog) {
-    return <div className='w-full bg-[#ffeecd] py-12 text-center font3 text-2xl text-[#772c47]'>Blog not found!</div>;
+    return (
+      <div className='w-full bg-[#ffeecd] py-12 text-center font3 text-2xl text-[#772c47]'>
+        Blog not found!
+      </div>
+    );
   }
 
   return (
-    <div className="w-full bg-[#fff7e6] py-12 h-full">
-      <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-white rounded-lg shadow-lg">
-
+    <div className='w-full bg-[#ffeecd] py-12 min-h-screen'>
+      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-[#ffeecd] rounded-lg shadow-lg border border-[#772c47]'>
         {/* Back Button */}
-        <button 
-          className="mb-6 text-[#772c47] font-semibold text-lg flex items-center gap-2 hover:text-[#5a1d33] transition-all"
-          onClick={() => navigate(-1)}
+        <button
+          className='mb-6 text-[#772c47] font3 text-lg flex items-center gap-2 hover:text-[#5a1d33] transition cursor-pointer'
+          onClick={() => navigate('/')}
         >
           ← Back
         </button>
@@ -58,29 +62,29 @@ const BlogPage = () => {
         </h1>
 
         {/* Blog Image */}
-        <div className='w-full h-64 md:h-96 overflow-hidden rounded-lg mb-8 shadow-lg'>
+        <div className='w-full h-64 md:h-96 overflow-hidden rounded-lg mb-8 shadow-lg border border-[#772c47]'>
           <img
             src={blog.photo}
             alt={blog.title}
-            className="w-full h-full object-cover"
+            className='w-full h-full object-cover'
           />
         </div>
 
         {/* Blog Content */}
-        <div className='bg-white p-8 rounded-lg shadow-lg'>
+        <div className='bg-[#ffeecd] p-8 rounded-lg shadow-lg border border-[#772c47]'>
           <p className='font3 text-lg text-[#772c47] leading-relaxed'>
             {blog.content}
           </p>
         </div>
 
-        {/* Back Button */}
+        {/* Back to Home Button */}
         <div className='mt-8 text-center'>
-          <a
-            href='/'
+          <button
+            onClick={() => navigate('/')}
             className='inline-block px-8 py-3 bg-[#772c47] text-[#ffeecd] font3 text-lg rounded-lg hover:bg-opacity-90 transition-all'
           >
             Back to Home
-          </a>
+          </button>
         </div>
       </div>
     </div>

@@ -19,9 +19,9 @@ const Navbar = () => {
 
       {/* Links for Desktop View on the Right */}
       <div className='font3 hidden md:flex space-x-8 text-[#772c47] ml-auto'>
-        <a href='#about' className='text-xl'>About</a>
+        <a href='/aboutmediatryx' className='text-xl'>About</a>
         <a href='/services' className='text-xl'>Services</a>
-        <a href='#contact' className='text-xl'>Contact Us</a>
+        <a href='/contactus' className='text-xl'>Contact Us</a>
       </div>
 
       {/* Mobile Menu with Animation */}
@@ -34,7 +34,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className='absolute top-[10%] left-0 w-full bg-[#ffeecd] flex flex-col items-center space-y-4 p-4 shadow-lg md:hidden z-50 font-thin'
           >
-            <a href='#about' className='text-[#772c47]' onClick={() => setIsOpen(false)}>About</a>
+            <a href='/aboutmediatryx' className='text-[#772c47]' onClick={() => setIsOpen(false)}>About</a>
             <a href='/services' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Services</a>
             <a href='#contact' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Contact Us</a>
           </motion.div>
