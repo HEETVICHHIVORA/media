@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 // Animation variants
 const fadeInUp = {
@@ -20,8 +21,9 @@ const fadeInRight = {
 
 const AboutMediatryx = () => {
   return (
-    <div className="w-full bg-[#ffeecd] pt-10">
-      <div className="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+    <div className="w-full bg-[#ffeecd]">
+      <Navbar/>
+      <div className="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8 mt-4">
         
         {/* Left Side: Agency Information */}
         <motion.div

@@ -36,7 +36,7 @@ const Navbar = () => {
           >
             <a href='/aboutmediatryx' className='text-[#772c47]' onClick={() => setIsOpen(false)}>About</a>
             <a href='/services' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Services</a>
-            <a href='#contact' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Contact Us</a>
+            <a href='/contactus' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Contact Us</a>
           </motion.div>
         )}
       </AnimatePresence>

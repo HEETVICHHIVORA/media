@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { ServiceCard } from '../components/ServiceCard'
 import {motion} from 'framer-motion'
+import  Footer  from '../components/Footer'
 
 export const Services = () => {
 
@@ -104,6 +105,8 @@ export const Services = () => {
           <ServiceCard key={index} {...service} />
         ))}
       </div>
+
+      <Footer />
     </div>
   )
 }

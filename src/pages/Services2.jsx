@@ -16,7 +16,7 @@ export const Services2 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="font2 text-4xl sm:text-5xl md:text-6xl text-[#772c47]">
+        <h2 className="font2 text-4xl sm:text-5xl lg:text-6xl text-[#772c47]">
           Our <span className="font3 text-[#5a1f32]">Services</span>
         </h2>
         <p className="text-[#772c47] text-base sm:text-lg italic mt-2">
@@ -77,7 +77,7 @@ export const Services2 = () => {
 
         {/* 3. Email Marketing */}
         <motion.div
-            className="w-[90%] sm:w-[80%] mx-auto py-12 flex flex-col sm:flex-row items-center"
+            className="w-[90%] sm:w-[80%] mx-auto py-12 flex flex-col lg:flex-row items-center gap-y-4"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -143,11 +143,11 @@ export const Services2 = () => {
 
         {/* 5. Pay-Per-Click Advertising */}
         <motion.div
-  className="w-[90%] sm:w-[80%] mx-auto py-12 text-center"
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut" }}
-  viewport={{ once: true }}
+        className="w-[90%] sm:w-[80%] mx-auto py-12 text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
 >
   {/* Heading */}
   <h2 className="text-4xl sm:text-5xl font-bold font2 fontColor">
@@ -177,7 +177,7 @@ export const Services2 = () => {
 
         {/* 6. Influencer Marketing */}
         <motion.div
-          className="w-[90%] sm:w-[80%] mx-auto py-12 flex flex-col sm:flex-row items-center"
+          className="w-[90%] sm:w-[80%] mx-auto py-12 flex flex-col lg:flex-row gap-y-4 items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

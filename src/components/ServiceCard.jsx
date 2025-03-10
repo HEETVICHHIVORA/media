@@ -40,7 +40,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <p className="font3 text-lg lg:text-xl">{content}</p>
+          <p className="font3 text-lg lg:text-xl flex justify-center lg:justify-start">{content}</p>
           <UseServiceButton routeName={routeName} />
         </motion.div>
       </div>

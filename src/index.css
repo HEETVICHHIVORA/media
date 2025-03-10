@@ -28,14 +28,21 @@
   .fontColor{
     color:#772c47;
   }
-  /* Hide scrollbar */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  /* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
 }
+
+/* For Edge and IE */
+body {
+  -ms-overflow-style: none;
+}
+
 
 img{
   aspect-ratio: 3/2;

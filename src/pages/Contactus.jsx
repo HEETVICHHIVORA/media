@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'; 
 import { useParams } from 'react-router-dom';
 import {toast} from 'sonner'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export const Contactus = () => {
     const {service}=useParams();
@@ -68,8 +70,9 @@ export const Contactus = () => {
       }
 
   return (
-      <div className="w-full h-full bg-[#ffeecd] py-2">
-        <div className="w-[90%] mx-auto">
+      <div className="w-full h-full bg-[#ffeecd]">
+        <Navbar/>
+        <div className="w-[90%] mx-auto flex flex-col justify-center items-start space-y-2 mt-8">
           {/* Heading */}
           <h2 className="font2 text-4xl lg:text-5xl text-[#772c47]">
             Get <span className="font3">in touch</span>
@@ -135,6 +138,7 @@ export const Contactus = () => {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
   )
 }

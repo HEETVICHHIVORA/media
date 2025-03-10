@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { ServiceCard } from '../components/ServiceCard'
 import {motion} from 'framer-motion'
+import Footer from '../components/Footer'
 
 export const Services3 = () => {
 
@@ -9,7 +10,7 @@ export const Services3 = () => {
     {
       al: "left",
       heading: "Web Design",
-      image: "webDesign.png",
+      image: "web_design.png",
       content: "Your website is often the first impression potential customers have of your business. Our web design services focus on creating visually appealing, user-friendly, and responsive websites that reflect your brand and engage your audience. We prioritize functionality and aesthetics, ensuring that your website not only looks great but also provides a seamless user experience. Our goal is to convert visitors into customers through effective design and intuitive navigation.",
       routeName: "/web-design"
     },
@@ -46,7 +47,7 @@ export const Services3 = () => {
     {
       al: "right",
       heading:"Social Media",
-      image: "social_med.png",
+      image: "social_media.png",
       content:        <div
                 className="w-[90%] sm:w-[80%] py-6 flex flex-col items-center text-center"
               >
@@ -94,7 +95,7 @@ export const Services3 = () => {
     {
       al: "right",
       heading:"Email Marketing",
-      image: "email_markt.png",
+      image: "email_marketing.png",
       content:        <div
                   className="w-[90%] sm:w-[80%] py-6 flex flex-col sm:flex-row items-center"
                   >      
@@ -128,14 +129,14 @@ export const Services3 = () => {
     {
       al: "left",
       heading:"Analytics & Reporting",
-      image: "anr.png",
+      image: "analysis.png",
       content:"Data is at the heart of our digital marketing strategies. Our analytics and reporting services provide you with detailed insights into your marketing performance. We track key metrics, analyze user behavior, and measure the effectiveness of your campaigns. By translating data into actionable insights, we help you make informed decisions and continuously optimize your marketing efforts to achieve better results.",
       routeName: "/analytics-report"
     },
     {
       al: "right",
       heading:"Conversion Optimization",
-      image: "conv.png",
+      image: "conversion.png",
       content:"We turn visitors into customers by improving your website's user experience. Our conversion optimization services include analyzing user behavior, identifying barriers, and implementing strategies like A/B testing to enhance site performance and increase conversion rates.",
       routeName: "/consulting-training"
     }
@@ -181,6 +182,8 @@ export const Services3 = () => {
           <ServiceCard key={index} {...service} />
         ))}
       </div>
+
+      <Footer/>
     </div>
   )
 }

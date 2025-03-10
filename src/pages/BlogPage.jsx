@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 // Mock data for blogs (replace with your actual data source)
 const blogs = [
@@ -39,15 +41,16 @@ const BlogPage = () => {
 
   if (!blog) {
     return (
-      <div className='w-full bg-[#ffeecd] py-12 text-center font3 text-2xl text-[#772c47]'>
+      <div className='w-full h-full  bg-[#ffeecd] py-12 flex justify-center items-center font3 text-2xl text-[#772c47]'>
         Blog not found!
       </div>
     );
   }
 
   return (
-    <div className='w-full bg-[#ffeecd] py-12 min-h-screen'>
-      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-[#ffeecd] rounded-lg shadow-lg border border-[#772c47]'>
+    <div className='w-full bg-[#ffeecd] min-h-screen'>
+      <Navbar/>
+      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-[#ffeecd] rounded-lg shadow-lg border border-[#772c47] mt-4'>
         {/* Back Button */}
         <button
           className='mb-6 text-[#772c47] font3 text-lg flex items-center gap-2 hover:text-[#5a1d33] transition cursor-pointer'
@@ -87,6 +90,7 @@ const BlogPage = () => {
           </button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
