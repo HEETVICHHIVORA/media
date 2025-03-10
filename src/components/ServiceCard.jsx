@@ -34,7 +34,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         />
         
         <motion.div 
-          className="flex flex-col justify-between items-center md:items-start gap-y-5 text-center md:text-left"
+          className="flex flex-col justify-between items-center md:items-start gap-y-5 text-center md:text-lef  t"
           initial={{ opacity: 0, x: al === 'left' ? 50 : -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
