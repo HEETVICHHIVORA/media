@@ -7,7 +7,7 @@ import {Toaster} from 'sonner';
 
 createRoot(document.getElementById('root')).render(
   <AppContextProvider>
-    <BrowserRouter>
+    <BrowserRouter basename='/media/'>
        <App/>
        <Toaster />
     </BrowserRouter>
