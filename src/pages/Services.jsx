@@ -66,7 +66,7 @@ export const Services = () => {
   ]
 
   return (
-    <div className="color1 bgColor min-h-screen w-full">
+    <div className="color1 bgSkin min-h-screen w-full">
       <Navbar />
 
 
@@ -93,14 +93,14 @@ export const Services = () => {
 
         {/* Animated Divider Line */}
         <motion.p
-          className="h-[2px] w-12 sm:w-16 bg-[#772c47] mt-2"
+          className="h-[2px] w-12 sm:w-16 bgBrown mt-2"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
         ></motion.p>
       </div>
 
-      <div className="font2 fontColor w-[90%] sm:w-[80%] mx-auto py-5 text-3xl sm:text-4xl flex flex-col gap-y-10">
+      <div className="font2 textBrown w-[90%] sm:w-[80%] mx-auto py-5 text-3xl sm:text-4xl flex flex-col gap-y-10">
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
         ))}

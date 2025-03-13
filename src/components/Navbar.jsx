@@ -8,9 +8,9 @@ const Navbar = () => {
   const navigate=useNavigate();
 
   return (
-    <div className='font2 w-full h-[10%] bg-[#ffeecd] flex items-center justify-between p-4 shadow-md'>
+    <div className='font2 w-full h-[10%] bgSkin textBrown flex items-center justify-between p-4 shadow-md relative'>
       {/* Brand Name on the Left */}
-      <div className='text-[#772c47] font-bold text-3xl cursor-pointer' onClick={()=>{navigate('/')}}>Mediatryx</div>
+      <div className='font-bold text-3xl cursor-pointer' onClick={()=>{navigate('/')}}>Mediatryx</div>
 
       {/* Hamburger Menu for Mobile */}
       <div className='md:hidden' onClick={() => setIsOpen(!isOpen)}>
@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       {/* Links for Desktop View on the Right */}
-      <div className='font3 hidden md:flex space-x-8 text-[#772c47] ml-auto'>
+      <div className='font3 hidden md:flex space-x-8 ml-auto'>
         <a href='/aboutmediatryx' className='text-xl'>About</a>
         <a href='/services' className='text-xl'>Services</a>
         <a href='/contactus' className='text-xl'>Contact Us</a>
@@ -32,11 +32,11 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className='absolute top-[10%] left-0 w-full bg-[#ffeecd] flex flex-col items-center space-y-4 p-4 shadow-lg md:hidden z-50 font-thin'
+            className='absolute top-20 bgSkin left-0 w-full flex flex-col items-center space-y-4 p-4 shadow-lg md:hidden z-50 font-thin'
           >
-            <a href='/aboutmediatryx' className='text-[#772c47]' onClick={() => setIsOpen(false)}>About</a>
-            <a href='/services' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Services</a>
-            <a href='/contactus' className='text-[#772c47]' onClick={() => setIsOpen(false)}>Contact Us</a>
+            <a href='/aboutmediatryx' className='textBrown' onClick={() => setIsOpen(false)}>About</a>
+            <a href='/services' className='textBrown' onClick={() => setIsOpen(false)}>Services</a>
+            <a href='/contactus' className='textBrown' onClick={() => setIsOpen(false)}>Contact Us</a>
           </motion.div>
         )}
       </AnimatePresence>

@@ -7,7 +7,7 @@ const UseServiceButton = ({routeName}) => {
   return (
     <button
       onClick={() => navigate(routeName)}
-      className="w-fit bg-[#772c47] hover:bg-[#772c48d7] text-[#ffeecd] cursor-pointer font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg text-lg"
+      className="w-fit bgBrown hover:bg-[#772c48d7] textSkin cursor-pointer font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg text-lg"
       
     >
       Let's connect

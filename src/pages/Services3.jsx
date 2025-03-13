@@ -143,7 +143,7 @@ export const Services3 = () => {
   ]
 
   return (
-    <div className="color1 bgColor min-h-screen w-full">
+    <div className="color1 min-h-screen w-full">
       <Navbar />
 
 

@@ -22,12 +22,7 @@
     font-weight: 200;
     font-style: normal;
   }
-  .bgColor{
-    background-color: #ffffff;
-  }
-  .fontColor{
-    color:#772c47;
-  }
+
   /* For Webkit browsers (Chrome, Safari) */
 ::-webkit-scrollbar {
   display: none;
@@ -56,4 +51,16 @@ img{
   }
 
 
-  
+  .bgSkin{
+    background-color: #fff8eb;
+  }
+
+  .textSkin{
+    color:#fff8eb
+  }
+  .bgBrown{
+    background-color:#772c47;
+  }
+  .textBrown{
+    color: #772c47;
+  }

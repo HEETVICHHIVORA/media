@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const BlogCard = ({ id, title, photo, content }) => {
   return (
-    <Link to={`/blog/${id}`} className="w-full">
-      <div className="w-full bg-[#ffeecd] rounded-xl overflow-hidden shadow-lg border border-[#d9b99b] 
+    <Link to={`/blog/${id}`} className="w-full textBrown">
+      <div className="w-full bgSkin rounded-xl overflow-hidden shadow-lg border border-[#d9b99b] 
           transition-all duration-300 transform hover:scale-105 hover:shadow-xl 
           hover:ring-1 hover:ring-[#772c47] cursor-pointer flex flex-col h-full">
         
@@ -20,18 +20,18 @@ const BlogCard = ({ id, title, photo, content }) => {
         {/* Content Section */}
         <div className="p-6 flex flex-col flex-grow">
           {/* Title */}
-          <h3 className="font2 text-2xl md:text-3xl text-[#772c47] mb-3 font-semibold tracking-wide">
+          <h3 className="font2 text-2xl md:text-3xl mb-3 font-semibold tracking-wide">
             {title}
           </h3>
 
           {/* Limited Content */}
-          <p className="font3 text-lg text-[#772c47] line-clamp-3 flex-grow">
+          <p className="font3 text-lg  line-clamp-3 flex-grow">
             {content}
           </p>
 
           {/* Read More Button */}
           <div className="mt-auto">
-            <span className="text-[#772c47] font-semibold underline text-lg hover:text-[#5a1d33] transition-colors">
+            <span className="font-semibold underline text-lg hover:text-[#5a1d33] transition-colors">
               Read More →
             </span>
           </div>

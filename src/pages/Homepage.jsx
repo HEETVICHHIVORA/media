@@ -63,10 +63,10 @@ export const Homepage = () => {
   }, []);
 
   return (
-    <div className="bgColor">
+    <div className="bgSkin textBrown">
       <Navbar />
       {/* Hero Section */}
-      <div className="font2 w-full h-[85vh] bg-[#ffeecd] flex items-center justify-start">
+      <div className="font2 w-full h-[85vh] flex items-center justify-start">
         <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between">
           {/* Text on the Left */}
           <motion.div
@@ -75,7 +75,7 @@ export const Homepage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-[#772c47] text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <Typewriter
                 options={{
                   strings: ["Grow", "Advertise", "Expand"],
@@ -85,17 +85,17 @@ export const Homepage = () => {
                 }}
               />
             </h1>
-            <h1 className="text-[#772c47] text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               with
             </h1>
-            <h1 className="text-[#772c47] text-5xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Mediatryx
             </h1>
 
             {/* Explore Our Services Button */}
             <a
               href="/services"
-              className="inline-block mt-8 px-8 py-3 bg-[#772c47] text-[#ffeecd] font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
+              className="inline-block mt-8 px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
             >
               Explore Our Services
             </a>
@@ -129,22 +129,22 @@ export const Homepage = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center bg-[#ffeecd]">
-        <div className="w-50 h-[2px] bg-[#772c47] opacity-70"></div>
+      <div className="w-full flex justify-center">
+        <div className="w-50 h-[2px] bgBrown opacity-70"></div>
       </div>
 
 
       {/* Our Mission Section */}
-      <div className="font3 w-full bg-[#ffeecd] p-8">
+      <div className="font3 w-full  p-8">
         <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
           <motion.div
-            className="text-[#772c47] max-w-2xl w-full md:w-auto"
+            className="max-w-2xl w-full md:w-auto"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="font2 text-4xl md:text-5xl text-[#772c47]">
+            <h2 className="font2 text-4xl md:text-5xl">
               Our <span className="font3">Mission</span>
             </h2>
             <p className="text-lg md:text-xl leading-relaxed">
@@ -170,17 +170,17 @@ export const Homepage = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center bg-[#ffeecd]">
-        <div className="w-50 h-[2px] bg-[#772c47] opacity-70"></div>
+      <div className="w-full flex justify-center">
+        <div className="w-50 h-[2px] bgBrown opacity-70"></div>
       </div>
 
       {/* Our Expertise Section */}
-      <div className="w-full bg-[#ffeecd] p-8 flex flex-col items-center">
-        <h2 className="font2 text-4xl md:text-5xl text-[#772c47]">
+      <div className="w-full p-8 flex flex-col items-center">
+        <h2 className="font2 text-4xl md:text-5xl">
           Our <span className="font3">Expertise</span>
         </h2>
         <motion.div
-          className="text-[#772c47] text-2xl md:text-4xl mt-8"
+          className="text-2xl md:text-4xl mt-8"
           key={currentIndex}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -193,9 +193,9 @@ export const Homepage = () => {
 
       {/* Clientele Section */}
 
-      <div className="w-full bg-[#ffeecd] p-8 overflow-hidden">
+      <div className="w-full p-8 overflow-hidden">
         <div className="w-[90%] mx-auto">
-          <h2 className="font2 text-4xl md:text-5xl text-[#772c47]">
+          <h2 className="font2 text-4xl md:text-5xl">
             Our <span className="font3">Clientele</span>
           </h2>
 
@@ -218,7 +218,7 @@ export const Homepage = () => {
                     alt={client.name}
                     className="w-20 h-20"
                   />
-                  <p className="text-[#772c47] mt-2">{client.name}</p>
+                  <p className="mt-2">{client.name}</p>
                 </div>
               ))}
             </motion.div>
@@ -227,10 +227,10 @@ export const Homepage = () => {
       </div>
 
       {/* Blog Cards Section */}
-      <div className="w-full bg-[#ffeecd] py-12">
+      <div className="w-full py-12">
         <div className="w-[90%] mx-auto">
           {/* Heading */}
-          <h2 className="font2 text-4xl md:text-5xl text-[#772c47] text-center mb-8">
+          <h2 className="font2 text-4xl md:text-5xl text-center mb-8">
             Latest Blogs
           </h2>
 

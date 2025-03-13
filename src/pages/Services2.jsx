@@ -5,7 +5,7 @@ import FloatingButton from '../components/FloatingButton'
 
 export const Services2 = () => {
   return (
-    <div className="color1 bgColor min-h-screen w-full">
+    <div className="color1 bgSkin textBrown min-h-screen w-full">
         <FloatingButton />
       <Navbar />
 
@@ -16,13 +16,13 @@ export const Services2 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="font2 text-4xl sm:text-5xl lg:text-6xl text-[#772c47]">
-          Our <span className="font3 text-[#5a1f32]">Services</span>
+        <h2 className="font2 text-4xl sm:text-5xl lg:text-6xl">
+          Our <span className="font3">Services</span>
         </h2>
-        <p className="text-[#772c47] text-base sm:text-lg italic mt-2">
+        <p className="text-base sm:text-lg italic mt-2">
           Empowering businesses with top-notch solutions
         </p>
-        <div className="h-[2px] w-12 sm:w-16 bg-[#772c47] mt-2"></div>
+        <div className="h-[2px] w-12 sm:w-16 bgBrown mt-2"></div>
       </motion.div>
 
       {/* Sections */}
@@ -35,8 +35,8 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="font2 text-4xl sm:text-5xl  fontColor">Website and SEO</h2>
-          <p className="font3 text-lg sm:text-xl mt-3 fontColor">
+          <h2 className="font2 text-4xl sm:text-5xl">Website and SEO</h2>
+          <p className="font3 text-lg sm:text-xl mt-3">
             The importance of having a well-designed website.<br />
             The role of SEO in optimizing websites for:
           </p>
@@ -46,7 +46,7 @@ export const Services2 = () => {
             {["ws1.png", "ws2.png", "ws3.png"].map((img, index) => (
               <div key={index} className="flex flex-col items-center justify-between p-5 h-[250px] rounded-lg">
                 <img src={img} alt="" className="w-[100px] h-[100px] object-contain" />
-                <p className="bg-[#772c47] text-[#ffeecd] px-5 py-2 rounded-full text-sm sm:text-base">
+                <p className="bgBrown textSkin px-5 py-2 rounded-full text-sm sm:text-base">
                   {["Search engines", "Increasing visibility", "Enhancing Organic Traffic"][index]}
                 </p>
               </div>
@@ -62,12 +62,12 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold fontColor font2">Social Media Marketing (SMM)</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold font2">Social Media Marketing (SMM)</h2>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-16 mt-10">
             {["sm1.png", "sm2.png"].map((img, index) => (
               <div key={index} className="flex flex-col items-center max-w-[300px]">
                 <img src={img} alt="" className="w-16 h-16 mb-4" />
-                <p className="text-lg text-black font-medium font3 fontColor">
+                <p className="text-lg font-medium font3">
                   {["The appeal of social media platforms creating engaging content", "Two-way communication Utilizing analytics for better outcomes"][index]}
                 </p>
               </div>
@@ -84,13 +84,13 @@ export const Services2 = () => {
             viewport={{ once: true }}
             >
             {/* Left Side - Heading */}
-            <h2 className="font2 fontColor text-4xl sm:text-5xl font-bold sm:w-1/3">
+            <h2 className="font2 text-4xl sm:text-5xl font-bold sm:w-1/3">
                 Email <br /> Marketing
             </h2>
 
             {/* Right Side - List with Checkmarks & Dotted Lines */}
             <div className="sm:w-2/3 w-full mt-8 sm:mt-0">
-                <ul className="text-lg w-full relative font3 fontColor">
+                <ul className="text-lg w-full relative font3">
                 {[
                     "Effectiveness of email marketing",
                     "Building an email list",
@@ -123,8 +123,8 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="font2 fontColor text-4xl sm:text-5xl font-bold text-black mb-6 text-center">Content Marketing</h2>
-          <div className="bg-[#772c47] text-white p-6 sm:p-8 rounded-lg shadow-lg">
+          <h2 className="font2 text-4xl sm:text-5xl font-bold mb-6 text-center">Content Marketing</h2>
+          <div className="bgBrown textSkin p-6 sm:p-8 rounded-lg shadow-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg">
               {[
                 "The significance of content marketing",
@@ -149,29 +149,29 @@ export const Services2 = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
 >
-  {/* Heading */}
-  <h2 className="text-4xl sm:text-5xl font-bold font2 fontColor">
-    Pay-Per-Click <br className="sm:hidden" /> (PPC) Advertising
-  </h2>
+            {/* Heading */}
+            <h2 className="text-4xl sm:text-5xl font-bold font2">
+              Pay-Per-Click <br className="sm:hidden" /> (PPC) Advertising
+            </h2>
 
-  {/* Bordered Box - Content */}
-  <div className="border-2 border-[#772c47] mt-6 p-6 sm:p-8 rounded-md">
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg text-left font3 fontColor">
-      {[
-        "The concept of PPC-based advertising",
-        "Generating immediate and targeted traffic",
-        "Advertising platforms",
-        "Campaign setup",
-        "Keyword optimization",
-        "Performance monitoring"
-      ].map((item, index) => (
-        <div key={index} className="flex items-center space-x-3">
-          <span className="fontColor text-xl">▶</span>
-          <span>{item}</span>
-        </div>
-      ))}
-    </div>
-  </div>
+            {/* Bordered Box - Content */}
+            <div className="border-2 border-[#772c47] mt-6 p-6 sm:p-8 rounded-md">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg text-left font3">
+                {[
+                  "The concept of PPC-based advertising",
+                  "Generating immediate and targeted traffic",
+                  "Advertising platforms",
+                  "Campaign setup",
+                  "Keyword optimization",
+                  "Performance monitoring"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <span className="text-xl">▶</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
         </motion.div>
 
 
@@ -183,8 +183,8 @@ export const Services2 = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold font2 fontColor sm:w-1/3 text-center">Influencer Marketing</h2>
-          <div className="sm:w-2/3 w-full bg-amber-200/[0.3] rounded-md shadow-md font3 fontColor">
+          <h2 className="text-4xl sm:text-5xl font-bold font2 sm:w-1/3 text-center">Influencer Marketing</h2>
+          <div className="sm:w-2/3 w-full bg-amber-200/[0.3] rounded-md shadow-md font3">
             <ul className="text-lg">
               {[
                 "The increasing influence of influencers",
@@ -193,7 +193,7 @@ export const Services2 = () => {
                 "The importance of authenticity and long-term relationships"
               ].map((item, index) => (
                 <li key={index} className="flex items-center space-x-3 px-6 py-4 relative">
-                  <span className="fontColor text-xl">•</span>
+                  <span className="text-xl">•</span>
                   <span className="flex-1">{item}</span>
                   {index !== 3 && <span className="absolute bottom-0 left-0 w-full border-t border-black"></span>}
                 </li>

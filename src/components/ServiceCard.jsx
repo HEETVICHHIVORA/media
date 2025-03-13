@@ -19,7 +19,7 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
         viewport={{ once: true }}
       >
         <p className={`text-4xl lg:text-6xl ${al === 'left' ? 'text-left' : 'text-right'} text-center`}>{heading}</p>
-        <div className="h-[2px] bg-[#772c47] mt-1 rounded-full w-full"></div>
+        <div className="h-[2px] bgBrown mt-1 rounded-full w-full"></div>
       </motion.div>
 
       <div className={`relative flex flex-col lg:flex-row ${al === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 lg:gap-10 m-3 justify-between items-center`}>

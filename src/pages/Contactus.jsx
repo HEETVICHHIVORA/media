@@ -70,11 +70,11 @@ export const Contactus = () => {
       }
 
   return (
-      <div className="w-full h-full bg-[#ffeecd]">
+      <div className="w-full h-full bgSkin">
         <Navbar/>
         <div className="w-[90%] mx-auto flex flex-col justify-center items-start space-y-2 mt-8">
           {/* Heading */}
-          <h2 className="font2 text-4xl lg:text-5xl text-[#772c47]">
+          <h2 className="font2 text-4xl lg:text-5xl textBrown">
             Get <span className="font3">in touch</span>
           </h2>
 
@@ -130,7 +130,7 @@ export const Contactus = () => {
               />
               <button
                 type="submit"
-                className="cursor-pointer w-full lg:w-auto px-6 py-3 bg-[#772c47] text-[#ffeecd] font3 rounded-lg hover:bg-opacity-90 transition"
+                className="cursor-pointer w-full lg:w-auto px-6 py-3 bgBrown textSkin font3 rounded-lg hover:bg-opacity-90 transition"
                 onClick={sendmail}
               >
                 Submit

@@ -59,10 +59,10 @@ const Contactus = () => {
       }
 
   return (
-      <div className="w-full bg-[#ffeecd] p-8">
+      <div className="w-full bgSkin textBrown p-8">
         <div className="w-[90%] mx-auto">
           {/* Heading */}
-          <h2 className="font2 text-4xl lg:text-5xl text-[#772c47]">
+          <h2 className="font2 text-4xl lg:text-5xl">
             Get <span className="font3">in touch</span>
           </h2>
 
@@ -118,12 +118,12 @@ const Contactus = () => {
               />
               <button
                 type="submit"
-                className="cursor-pointer w-full lg:w-auto px-6 py-3 bg-[#772c47] text-[#ffeecd] font3 rounded-lg hover:bg-opacity-90 transition"
+                className="cursor-pointer w-full lg:w-auto px-6 py-3 bgBrown textSkin font3 rounded-lg hover:bg-opacity-90 transition"
                 onClick={sendmail}
               >
                 Submit 
               </button> 
-               <p className='font3 text-xl fontColor flex flex-col sm:flex-row text-center sm:items-center items-end gap-y-3 gap-x-1'>
+               <p className='font3 text-xl flex flex-col sm:flex-row text-center sm:items-center items-end gap-y-3 gap-x-1'>
                 <span className='font2 text-2xl mx-auto'>OR</span>  Reach us out at marketing@mediatryx.com <span className='mx-auto'><img className='h-[30px]' src="msgbox.png" alt="" /></span> 
                </p>
             </div>

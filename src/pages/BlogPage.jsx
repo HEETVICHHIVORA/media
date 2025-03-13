@@ -41,26 +41,26 @@ const BlogPage = () => {
 
   if (!blog) {
     return (
-      <div className='w-full h-full  bg-[#ffeecd] py-12 flex justify-center items-center font3 text-2xl text-[#772c47]'>
+      <div className='w-full h-full  bgSkin py-12 flex justify-center items-center font3 text-2xl textBrown'>
         Blog not found!
       </div>
     );
   }
 
   return (
-    <div className='w-full bg-[#ffeecd] min-h-screen'>
+    <div className='w-full bgSkin min-h-screen textBrown'>
       <Navbar/>
-      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 bg-[#ffeecd] rounded-lg shadow-lg border border-[#772c47] mt-4'>
+      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 rounded-lg shadow-lg border border-[#772c47] mt-4'>
         {/* Back Button */}
         <button
-          className='mb-6 text-[#772c47] font3 text-lg flex items-center gap-2 hover:text-[#5a1d33] transition cursor-pointer'
+          className='mb-6 font3 text-lg flex items-center gap-2 hover:text-[#5a1d33] transition cursor-pointer'
           onClick={() => navigate('/')}
         >
           ← Back
         </button>
 
         {/* Blog Title */}
-        <h1 className='font2 text-4xl md:text-5xl text-[#772c47] text-center mb-8'>
+        <h1 className='font2 text-4xl md:text-5xl text-center mb-8'>
           {blog.title}
         </h1>
 
@@ -74,8 +74,8 @@ const BlogPage = () => {
         </div>
 
         {/* Blog Content */}
-        <div className='bg-[#ffeecd] p-8 rounded-lg shadow-lg border border-[#772c47]'>
-          <p className='font3 text-lg text-[#772c47] leading-relaxed'>
+        <div className='p-8 rounded-lg shadow-lg border border-[#772c47]'>
+          <p className='font3 text-lg leading-relaxed'>
             {blog.content}
           </p>
         </div>
@@ -84,7 +84,7 @@ const BlogPage = () => {
         <div className='mt-8 text-center'>
           <button
             onClick={() => navigate('/')}
-            className='inline-block px-8 py-3 bg-[#772c47] text-[#ffeecd] font3 text-lg rounded-lg hover:bg-opacity-90 transition-all'
+            className='inline-block px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all'
           >
             Back to Home
           </button>

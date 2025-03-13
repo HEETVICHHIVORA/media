@@ -21,7 +21,7 @@ const fadeInRight = {
 
 const AboutMediatryx = () => {
   return (
-    <div className="w-full bg-[#ffeecd]">
+    <div className="w-full bgSkin textBrown">
       <Navbar/>
       <div className="w-[90%] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8 mt-4">
         
@@ -34,7 +34,7 @@ const AboutMediatryx = () => {
           viewport={{ once: true }}
         >
           <motion.h1
-            className="font2 text-3xl md:text-5xl text-[#772c47] mb-6 underline-offset-4 underline"
+            className="font2 text-3xl md:text-5xl mb-6 underline-offset-4 underline"
             variants={fadeInUp}
           >
             About Mediatryx
@@ -42,7 +42,7 @@ const AboutMediatryx = () => {
 
           {/* Agency Description */}
           <motion.p
-            className="font3 text-base md:text-lg text-[#772c47] leading-relaxed mb-6"
+            className="font3 text-base md:text-lg leading-relaxed mb-6"
             variants={fadeInUp}
           >
             Mediatryx is a leading agency specializing in Investor Relations (IR), Public Relations (PR), and strategic communication services. Our experienced professionals help businesses grow, advertise, and expand by crafting compelling narratives and building strong stakeholder relationships.
@@ -50,13 +50,13 @@ const AboutMediatryx = () => {
 
           {/* Mission Statement */}
           <motion.h2
-            className="font2 text-2xl md:text-3xl text-[#772c47] mb-4"
+            className="font2 text-2xl md:text-3xl  mb-4"
             variants={fadeInUp}
           >
             Our Mission
           </motion.h2>
           <motion.p
-            className="font3 text-base md:text-lg text-[#772c47] leading-relaxed mb-6"
+            className="font3 text-base md:text-lg leading-relaxed mb-6"
             variants={fadeInUp}
           >
             Our mission is to provide end-to-end services that ensure compliance with SEBI guidelines while helping businesses achieve their communication and growth goals. We deliver innovative solutions that drive results and create lasting value for our clients.
@@ -64,13 +64,13 @@ const AboutMediatryx = () => {
 
           {/* Core Values */}
           <motion.h2
-            className="font2 text-2xl md:text-3xl text-[#772c47] mb-4"
+            className="font2 text-2xl md:text-3xl mb-4"
             variants={fadeInUp}
           >
             Our Core Values
           </motion.h2>
           <motion.ul
-            className="font3 text-base md:text-lg text-[#772c47] leading-relaxed list-disc list-inside mb-6"
+            className="font3 text-base md:text-lg leading-relaxed list-disc list-inside mb-6"
             variants={fadeInUp}
           >
             <li>Integrity and Transparency</li>
@@ -83,7 +83,7 @@ const AboutMediatryx = () => {
           <motion.div className="mt-8" variants={fadeInUp}>
             <a
               href="/services"
-              className="inline-block px-6 py-3 bg-[#772c47] text-[#ffeecd] font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
+              className="inline-block px-6 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
             >
               Explore Our Services
             </a>
