@@ -5,6 +5,7 @@ import {toast} from 'sonner'
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import LazyImage from '../components/LazyImage';
 
 export const Contactus = () => {
     const {service}=useParams();
@@ -105,7 +106,7 @@ export const Contactus = () => {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        <img
+                        <LazyImage
                             src="/media/contactus.png"
                             alt="Contact Us"
                             className="w-full h-auto object-cover rounded-lg"

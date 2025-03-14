@@ -6,6 +6,7 @@ import BlogCard from "../components/BlogCard";
 import Contactus from "../components/Contactus";
 import Footer from "../components/Footer";
 import {Link} from 'react-router-dom'
+import LazyImage from "../components/LazyImage";
 
 export const Homepage = () => {
   
@@ -105,9 +106,8 @@ export const Homepage = () => {
   
 
           <div className="w-full md:w-1/2 items-center justify-center hidden md:flex">
-            <img
+            <LazyImage
               src="/media/herosection.png"
-              alt="Hero Section"
               className="w-full h-auto max-w-lg object-contain scale-120"
             />
           </div>
@@ -162,10 +162,9 @@ export const Homepage = () => {
             viewport={{ once: true }}
           >
             {/* Image */}
-            <img
+            <LazyImage
               src="/media/ourmission.png"
-              alt="Our Mission"
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-w-lg object-contain"
             />
           </motion.div>
         </div>
@@ -214,9 +213,8 @@ export const Homepage = () => {
                   key={index}
                   className="min-w-[120px] flex flex-col items-center"
                 >
-                  <img
+                  <LazyImage
                     src={client.logo}
-                    alt={client.name}
                     className="w-20 h-20"
                   />
                   <p className="mt-2">{client.name}</p>
@@ -292,7 +290,7 @@ export const Homepage = () => {
                 <div className="w-full flex flex-col sm:flex-row  mt-8 justify-evenly items-center">
                   {["ws1.png", "ws2.png", "ws3.png"].map((img, index) => (
                     <div key={index} className="flex flex-col items-center justify-between p-5 h-[250px] rounded-lg">
-                      <img src={img} alt="" className="w-[100px] h-[100px] object-contain" />
+                      <LazyImage src={img} className="w-[100px] h-[100px] object-contain" />
                       <p className="bgBrown textSkin px-5 py-2 rounded-full text-sm sm:text-base">
                         {["Search engines", "Increasing visibility", "Enhancing Organic Traffic"][index]}
                       </p>
@@ -313,7 +311,7 @@ export const Homepage = () => {
                 <div className="w-full flex flex-col sm:flex-row justify-evenly items-center gap-16 mt-10">
                   {["sm1.png", "sm2.png"].map((img, index) => (
                     <div key={index} className="flex flex-col items-center max-w-[300px]">
-                      <img src={img} alt="" className="w-16 h-16 mb-4" />
+                      <LazyImage src={img} className="w-16 h-16 mb-4" />
                       <p className="text-lg font-medium font3">
                         {["The appeal of social media platforms creating engaging content", "Two-way communication Utilizing analytics for better outcomes"][index]}
                       </p>

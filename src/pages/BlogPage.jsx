@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import LazyImage from '../components/LazyImage';
 
 // Mock data for blogs (replace with your actual data source)
 const blogs = [
@@ -92,9 +93,8 @@ const BlogPage = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <img
+          <LazyImage
             src={blog.photo}
-            alt={blog.title}
             className='w-full h-full object-cover'
           />
         </motion.div>

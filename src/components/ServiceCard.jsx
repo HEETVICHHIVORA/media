@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import UseServiceButton from './UseServiceButton'
+import  LazyImage  from './LazyImage'
 
 export const ServiceCard = ({ al, heading, image, content, routeName }) => {
   return (
@@ -23,15 +24,20 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
       </motion.div>
 
       <div className={`relative flex flex-col lg:flex-row ${al === 'left' ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-6 lg:gap-10 m-3 justify-between items-center`}>
-        <motion.img 
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className='w-full h-full'
+      >
+        <LazyImage 
           src={image} 
+          alt="Lazy Loaded Image"
           className="w-full lg:w-[500px] h-[300px] rounded-lg object-contain aspect-[4/3] p-2" 
-          alt="" 
-          initial={{ scale: 0.9, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
         />
+      </motion.div>
+
         
         <motion.div 
           className="flex flex-col justify-between items-center lg:items-start gap-y-5 text-center lg:text-left"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from './LazyImage';
 
 const BlogCard = ({ id, title, photo, content }) => {
   return (
@@ -10,9 +11,8 @@ const BlogCard = ({ id, title, photo, content }) => {
         
         {/* Image Section */}
         <div className="w-full h-44 md:h-52 lg:h-60 relative overflow-hidden">
-          <img
+          <LazyImage
             src={photo || 'https://via.placeholder.com/600x400?text=No+Image'}
-            alt={title}
             className="w-full h-full object-cover"
           />
         </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
+import LazyImage from '../components/LazyImage';
 
 // Animation variants
 const fadeInUp = {
@@ -100,9 +101,8 @@ const AboutMediatryx = () => {
           viewport={{ once: true }}
         >
           <div className="w-full max-w-md h-80 md:h-96">
-            <img
+            <LazyImage
               src="/media/aboutuspic.png"
-              alt="About Mediatryx"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
