@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import BlogCard from "../components/BlogCard";
 import Contactus from "../components/Contactus";
 import Footer from "../components/Footer";
+import {Link} from 'react-router-dom'
 
 export const Homepage = () => {
   
@@ -93,12 +94,12 @@ export const Homepage = () => {
             </h1>
 
             {/* Explore Our Services Button */}
-            <a
-              href="/media/services"
+            <Link
+              to="/services"
               className="inline-block mt-8 px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
             >
               Explore Our Services
-            </a>
+            </Link>
           </motion.div>
 
   
