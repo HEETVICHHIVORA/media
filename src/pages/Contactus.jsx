@@ -106,7 +106,7 @@ export const Contactus = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <img
-                            src="/contactus.png"
+                            src="/media/contactus.png"
                             alt="Contact Us"
                             className="w-full h-auto object-cover rounded-lg"
                         />

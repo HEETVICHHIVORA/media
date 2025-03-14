@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 
 // Animation variants
 const fadeInUp = {
@@ -81,12 +82,12 @@ const AboutMediatryx = () => {
 
           {/* Call to Action */}
           <motion.div className="mt-8" variants={fadeInUp}>
-            <a
-              href="/services"
+            <Link
+              to="/services"
               className="inline-block px-6 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
             >
               Explore Our Services
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -100,7 +101,7 @@ const AboutMediatryx = () => {
         >
           <div className="w-full max-w-md h-80 md:h-96">
             <img
-              src="/aboutuspic.png"
+              src="/media/aboutuspic.png"
               alt="About Mediatryx"
               className="w-full h-full object-cover rounded-lg"
             />

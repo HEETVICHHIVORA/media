@@ -106,7 +106,7 @@ export const Homepage = () => {
 
           <div className="w-full md:w-1/2 items-center justify-center hidden md:flex">
             <img
-              src="/herosection.png"
+              src="/media/herosection.png"
               alt="Hero Section"
               className="w-full h-auto max-w-lg object-contain scale-120"
             />
@@ -122,7 +122,7 @@ export const Homepage = () => {
       }}
     >
       <img 
-        src="/herosection.png" 
+        src="/media/herosection.png" 
         alt="Hero Section" 
         className='w-full h-auto max-w-lg object-cover'
       />
@@ -163,7 +163,7 @@ export const Homepage = () => {
           >
             {/* Image */}
             <img
-              src="/ourmission.png"
+              src="/media/ourmission.png"
               alt="Our Mission"
               className="w-full h-full object-cover"
             />
@@ -451,7 +451,7 @@ export const Homepage = () => {
       
       </div>
 
-      <Contactus />
+      <Contactus/>
       <Footer/>
 
 
