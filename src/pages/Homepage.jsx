@@ -94,7 +94,7 @@ export const Homepage = () => {
 
             {/* Explore Our Services Button */}
             <a
-              href="/services"
+              href="/media/services"
               className="inline-block mt-8 px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
             >
               Explore Our Services

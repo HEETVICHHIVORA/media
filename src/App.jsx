@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Homepage/>} />
         <Route path="/services" element={<Services/>} />
         <Route path="/blog/:id" element={<BlogPage />} />
-        <Route path="services/contactus/:service" element={<Contactus />} />
+        <Route path="/services/contactus/:service" element={<Contactus />} />
         <Route path="/aboutmediatryx"  element={<AboutMediatryx/>} />
         <Route path="/contactus" element={<Contactus />} />
       </Routes>

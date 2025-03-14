@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -31,67 +32,104 @@ const blogs = [
       Remember, consistency is key in advertising, so ensure your messaging aligns with your brand identity.
     `,
   },
-  // Add more blogs here
 ];
 
 const BlogPage = () => {
-  const { id } = useParams(); // Get the blog ID from the URL
-  const blog = blogs.find((blog) => blog.id === id); // Find the blog by ID
+  const { id } = useParams();
+  const blog = blogs.find((blog) => blog.id === id);
   const navigate = useNavigate();
 
   if (!blog) {
     return (
-      <div className='w-full h-full  bgSkin py-12 flex justify-center items-center font3 text-2xl textBrown'>
+      <motion.div 
+        className='w-full h-full bgSkin py-12 flex justify-center items-center font3 text-2xl textBrown'
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 0.5 }}
+      >
         Blog not found!
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className='w-full bgSkin min-h-screen textBrown'>
+    <motion.div 
+      className='w-full bgSkin min-h-screen textBrown'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Navbar/>
-      <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 rounded-lg shadow-lg border border-[#772c47] mt-4'>
+      <motion.div 
+        className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto p-6 rounded-lg shadow-lg border border-[#772c47] mt-4'
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         {/* Back Button */}
-        <button
+        <motion.button
           className='mb-6 font3 text-lg flex items-center gap-2 hover:text-[#5a1d33] transition cursor-pointer'
           onClick={() => navigate('/')}
+          whileHover={{ scale: 1.05 }}
         >
           ← Back
-        </button>
+        </motion.button>
 
         {/* Blog Title */}
-        <h1 className='font2 text-4xl md:text-5xl text-center mb-8'>
+        <motion.h1 
+          className='font2 text-4xl md:text-5xl text-center mb-8'
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
           {blog.title}
-        </h1>
+        </motion.h1>
 
         {/* Blog Image */}
-        <div className='w-full h-64 md:h-96 overflow-hidden rounded-lg mb-8 shadow-lg border border-[#772c47]'>
+        <motion.div 
+          className='w-full h-64 md:h-96 overflow-hidden rounded-lg mb-8 shadow-lg border border-[#772c47]'
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <img
             src={blog.photo}
             alt={blog.title}
             className='w-full h-full object-cover'
           />
-        </div>
+        </motion.div>
 
         {/* Blog Content */}
-        <div className='p-8 rounded-lg shadow-lg border border-[#772c47]'>
+        <motion.div 
+          className='p-8 rounded-lg shadow-lg border border-[#772c47]'
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
           <p className='font3 text-lg leading-relaxed'>
             {blog.content}
           </p>
-        </div>
+        </motion.div>
 
         {/* Back to Home Button */}
-        <div className='mt-8 text-center'>
-          <button
+        <motion.div 
+          className='mt-8 text-center'
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+        >
+          <motion.button
             onClick={() => navigate('/')}
-            className='inline-block px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all'
+            className='inline-block px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition cursor-pointer'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Back to Home
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
       <Footer/>
-    </div>
+    </motion.div>
   );
 };
 

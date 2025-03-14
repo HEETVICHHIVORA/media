@@ -19,9 +19,9 @@ const Navbar = () => {
 
       {/* Links for Desktop View on the Right */}
       <div className='font3 hidden md:flex space-x-8 ml-auto'>
-        <a href='/aboutmediatryx' className='text-xl'>About</a>
-        <a href='/services' className='text-xl'>Services</a>
-        <a href='/contactus' className='text-xl'>Contact Us</a>
+        <a href='/media/aboutmediatryx' className='text-xl'>About</a>
+        <a href='/media/services' className='text-xl'>Services</a>
+        <a href='/media/contactus' className='text-xl'>Contact Us</a>
       </div>
 
       {/* Mobile Menu with Animation */}
@@ -34,9 +34,9 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className='absolute top-20 bgSkin left-0 w-full flex flex-col items-center space-y-4 p-4 shadow-lg md:hidden z-50 font-thin'
           >
-            <a href='/aboutmediatryx' className='textBrown' onClick={() => setIsOpen(false)}>About</a>
-            <a href='/services' className='textBrown' onClick={() => setIsOpen(false)}>Services</a>
-            <a href='/contactus' className='textBrown' onClick={() => setIsOpen(false)}>Contact Us</a>
+            <a href='/media/aboutmediatryx' className='textBrown' onClick={() => setIsOpen(false)}>About</a>
+            <a href='/media/services' className='textBrown' onClick={() => setIsOpen(false)}>Services</a>
+            <a href='/media/contactus' className='textBrown' onClick={() => setIsOpen(false)}>Contact Us</a>
           </motion.div>
         )}
       </AnimatePresence>
