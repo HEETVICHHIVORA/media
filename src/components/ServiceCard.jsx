@@ -33,7 +33,6 @@ export const ServiceCard = ({ al, heading, image, content, routeName }) => {
       >
         <LazyImage 
           src={image} 
-          alt="Lazy Loaded Image"
           className="w-full lg:w-[500px] h-[300px] rounded-lg object-contain aspect-[4/3] p-2" 
         />
       </motion.div>

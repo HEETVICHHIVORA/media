@@ -108,7 +108,6 @@ export const Contactus = () => {
                     >
                         <LazyImage
                             src="/media/contactus.png"
-                            alt="Contact Us"
                             className="w-full h-auto object-cover rounded-lg"
                         />
                     </motion.div>
