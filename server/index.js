@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 const emailTemplate = require('./emailTemplate');
 const emailResponse = require('./emailResponse');
 app.use(cors({
-    origin: "https://mediatryx.com/",
+    origin: "https://mediatryx.com",
     credentials: true
 }));
 
