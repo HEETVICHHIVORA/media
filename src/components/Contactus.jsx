@@ -158,14 +158,14 @@ const Contactus = () => {
             >
               Submit
             </motion.button>
-            <motion.p 
-              className="font3 text-xl flex flex-col sm:flex-row text-center sm:items-center items-end gap-y-3 gap-x-1"
+            <motion.div 
+              className="font3 text-xl flex flex-col sm:flex-row text-center items-end gap-y-3 gap-x-5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <span className="font2 text-2xl mx-auto">OR</span> Reach us out at marketing@mediatryx.com 
-              <span className="mx-auto">
+              <span className="font2 text-2xl mx-auto sm:mx-0">OR</span> Reach us out at marketing@mediatryx.com 
+              <span className="">
                 <motion.LazyImage 
                   className="h-[30px]" 
                   src="/media/msgbox.png" 
@@ -174,7 +174,7 @@ const Contactus = () => {
                   transition={{ duration: 0.5, delay: 0.7 }}
                 />
               </span>
-            </motion.p>
+            </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
