@@ -6,7 +6,6 @@ const PORT = process.env.PORT;
 const nodemailer = require('nodemailer');
 const emailTemplate = require('./emailTemplate');
 const emailResponse = require('./emailResponse');
-
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true

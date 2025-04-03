@@ -70,7 +70,7 @@ export const Contactus = () => {
 
     return (
         <motion.div 
-            className="w-full h-full"
+            className="w-full min-h-screen bgSkin"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -107,7 +107,7 @@ export const Contactus = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <LazyImage
-                            src="/media/contactus.png"
+                            src="/contactus.png"
                             className="w-full h-auto object-cover rounded-lg"
                         />
                     </motion.div>

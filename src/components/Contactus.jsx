@@ -95,7 +95,7 @@ const Contactus = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <LazyImage
-              src="/media/contactus.png"
+              src="/contactus.png"
               className="w-full h-auto object-cover rounded-lg"
             />
           </motion.div>

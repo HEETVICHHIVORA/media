@@ -102,7 +102,7 @@ const AboutMediatryx = () => {
         >
           <div className="w-full max-w-md h-80 md:h-96">
             <LazyImage
-              src="/media/aboutuspic.png"
+              src="/aboutuspic.png"
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
