@@ -37,7 +37,7 @@ export const Contactus = () => {
                 return toast.warning("Invalid Phone Number");
             }
     
-            const res = await fetch("http://localhost:4000/sendmail", {
+            const res = await fetch("https://mediatryx.onrender.com/sendmail", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
