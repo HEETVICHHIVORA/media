@@ -21,7 +21,7 @@ module.exports = (name) => {
                 Meanwhile, feel free to explore more about our services on our website.
             </p>
 
-            <a href="https://yourwebsite.com" target="_blank" 
+            <a href="https://mediatryx.com" target="_blank" 
                style="display: inline-block; padding: 12px 20px; background-color: #004080; 
                       color: #ffd700; text-decoration: none; border-radius: 6px; font-size: 16px; 
                       margin-top: 15px; font-weight: bold;">

@@ -70,7 +70,7 @@ export const Contactus = () => {
 
     return (
         <motion.div 
-            className="w-full min-h-screen bgSkin"
+            className="w-full min-h-screen bgSkin flex flex-col justify-between"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
