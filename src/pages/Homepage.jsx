@@ -108,7 +108,7 @@ export const Homepage = () => {
           <div className="w-full md:w-1/2 items-center justify-center hidden md:flex">
             <LazyImage
               src="/herosection.png"
-              className="w-full h-auto max-w-lg object-contain scale-120"
+              className="rounded-lg"
             />
           </div>
           {/* <motion.div

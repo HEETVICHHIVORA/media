@@ -26,6 +26,7 @@ export const Contactus = () => {
     }, [subject]);
     
     async function sendmail() {
+        const toastid=toast.loading("Sending Email...");
         try {
             if (!name || !email || !subject || !message) {
                 return toast.error("Please fill all the fields");
@@ -36,7 +37,6 @@ export const Contactus = () => {
             if(phno.length>0 && phno.length!=10){
                 return toast.warning("Invalid Phone Number");
             }
-    
             const res = await fetch("https://mediatryx.onrender.com/sendmail", {
                 method: "POST",
                 headers: {
@@ -62,10 +62,12 @@ export const Contactus = () => {
             } else {
                 toast.error("Error in sending email");
             }
+            
         } catch (e) {
             console.log(e);
             toast.error("Error in sending email");
         }
+        toast.dismiss(toastid);
     }
 
     return (
