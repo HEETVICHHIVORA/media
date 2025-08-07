@@ -5,8 +5,8 @@ import { Services } from './pages/Services'
 import {Contactus} from './pages/Contactus';
 import BlogPage from './pages/BlogPage';
 import AboutMediatryx from './pages/Aboutmediatryx'
+import { Testimonials } from './pages/Testimonials';
 function App() {
-
   return (
     <div className='w-screen h-screen overflow-x-hidden'>
       <Routes>
@@ -16,9 +16,9 @@ function App() {
         <Route path="/services/contactus/:service" element={<Contactus />} />
         <Route path="/aboutmediatryx"  element={<AboutMediatryx/>} />
         <Route path="/contactus" element={<Contactus />} />
+        <Route path="/testimonials" element={<Testimonials />} />
       </Routes>
     </div>
   )
 }
-
 export default App
