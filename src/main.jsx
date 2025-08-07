@@ -8,8 +8,8 @@ import { Toaster } from 'sonner'
 
 createRoot(document.getElementById('root')).render(
   <AppContextProvider>
-    <BrowserRouter>  
-       <App/>
+    <BrowserRouter>
+        <App/>
        <Toaster />
     </BrowserRouter>
   </AppContextProvider>

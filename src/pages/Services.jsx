@@ -71,6 +71,7 @@ export const Services = () => {
     { number: "24/7", label: "Support Available", icon: "💼" },
     { number: "ROI", label: "Focused Results", icon: "📈" }
   ]
+  React.useEffect(() => window.scrollTo(0, 0), []); // One liner
 
   return (
     <div className="color1 bgSkin min-h-screen w-full">

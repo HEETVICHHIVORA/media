@@ -6,10 +6,15 @@ import {Contactus} from './pages/Contactus';
 import BlogPage from './pages/BlogPage';
 import AboutMediatryx from './pages/Aboutmediatryx'
 import { Testimonials } from './pages/Testimonials';
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
+
   return (
     <div className='w-screen h-screen overflow-x-hidden'>
+      <ScrollToTop />
       <Routes>
+        {/* Define routes for different pages */}
         <Route path="/" element={<Homepage/>} />
         <Route path="/services" element={<Services/>} />
         <Route path="/blog/:id" element={<BlogPage />} />

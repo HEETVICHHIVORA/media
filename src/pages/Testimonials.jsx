@@ -251,7 +251,7 @@ export const Testimonials = () => {
             </motion.a>
             <motion.a
               href="/services"
-              className="inline-block px-8 py-4 border-2 border-white textSkin font3 text-lg rounded-lg hover:bg-white hover:textBrown transition-all"
+              className="inline-block px-8 py-4 border-2 border-white textSkin font3 text-lg rounded-lg transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

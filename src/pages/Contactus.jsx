@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import LazyImage from '../components/LazyImage';
 
 export const Contactus = () => {
+    React.useEffect(() => window.scrollTo(0, 0), []); // One liner
     const {service}=useParams();
     const [name, setname] = useState("");
     const [email, setemail] = useState("");

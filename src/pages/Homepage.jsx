@@ -7,8 +7,9 @@ import Contactus from "../components/Contactus";
 import Footer from "../components/Footer";
 import {Link} from 'react-router-dom'
 import LazyImage from "../components/LazyImage";
-
+import { AnimatePresence } from "framer-motion";
 export const Homepage = () => {
+  React.useEffect(() => window.scrollTo(0, 0), []); // One liner
   const [currentIndex, setCurrentIndex] = useState(0);
   const expertiseWords = [
     "Advertising",
@@ -22,11 +23,11 @@ export const Homepage = () => {
   ];
 
   const clients = [
-    { name: "NSE", logo: "https://via.placeholder.com/100" },
-    { name: "Scholar Sharks", logo: "https://via.placeholder.com/100" },
-    { name: "Lex5nance", logo: "https://via.placeholder.com/100" },
+    { name: "NSE", logo: "/NSE LOGO.jpg" },
+    { name: "Scholar Sharks", logo: "/Shcolor Shark.jpeg" },
+    { name: "Lex5nance", logo: "/Lex5nance Logo.png" },
     { name: "LearnEng", logo: "https://via.placeholder.com/100" },
-    { name: "Lasa Supergenics", logo: "https://via.placeholder.com/100" },
+    { name: "Lasa Supergenics", logo: "/LASA Logo.jpg" },
     { name: "Prabhhans Industries", logo: "https://via.placeholder.com/100" },
   ];
 
@@ -162,213 +163,334 @@ export const Homepage = () => {
         <div className="w-50 h-[2px] bgBrown opacity-70"></div>
       </div>
 
-      {/* Our Expertise Section */}
-      <div className="w-full p-8 flex flex-col items-center">
-        <h2 className="font2 text-4xl md:text-5xl">
-          Our <span className="font3">Expertise</span>
-        </h2>
-        <motion.div
-          className="text-2xl md:text-4xl mt-8"
-          key={currentIndex}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          {expertiseWords[currentIndex]}
-        </motion.div>
-      </div>
+      {/* Our Expertise Section - Lightweight Version with Animated Grid */}
+      <div className="w-full p-8 md:p-16 bgSkin textBrown">
+        <div className="w-[90%] max-w-6xl mx-auto">
+          {/* Simplified heading */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font2 text-4xl md:text-6xl mb-4">
+              Our <span className="font3 relative">
+                Expertise
+                <div className="absolute -bottom-2 left-0 w-full h-1 bgBrown rounded-full"></div>
+              </span>
+            </h2>
+            
+            <p className="font3 text-lg opacity-70 mt-4">
+              Discover our core competencies that drive business success
+            </p>
+          </motion.div>
 
-      {/* Clientele Section */}
-      <div className="w-full p-8 overflow-hidden">
-        <div className="w-[90%] mx-auto">
-          <h2 className="font2 text-4xl md:text-5xl mb-8">
-            Our <span className="font3">Clientele</span>
-          </h2>
+          {/* Simplified expertise display */}
+          <div className="relative flex flex-col items-center justify-center min-h-[200px] md:min-h-[250px]">
+            {/* Simple background circle */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-48 h-48 md:w-64 md:h-64 border border-current/20 rounded-full"></div>
+            </div>
 
-          {/* Marquee Wrapper */}
-          <div className="relative flex overflow-hidden w-full">
-            <motion.div
-              className="flex items-center gap-8"
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{ 
-                ease: "linear", 
-                duration: 20,
-                repeat: Infinity 
-              }}
-              style={{ 
-                display: "flex", 
-                whiteSpace: "nowrap",
-                minWidth: "200%"
-              }}
-            >
-              {/* First set of clients */}
-              {clients.map((client, index) => (
-                <div
-                  key={`first-${index}`}
-                  className="min-w-[150px] flex flex-col items-center justify-center flex-shrink-0 mx-4"
+            {/* Main expertise word - simple fade transition */}
+            <div className="relative z-10 text-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 md:px-8 md:py-6 border border-white/30"
                 >
-                  <div className="w-24 h-24 mb-3 flex items-center justify-center bg-white rounded-lg shadow-md">
-                    <LazyImage
-                      src={client.logo}
-                      alt={client.name}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  <p className="text-center text-sm font-medium">{client.name}</p>
-                </div>
-              ))}
-              
-              {/* Duplicate set for seamless loop */}
-              {clients.map((client, index) => (
-                <div
-                  key={`second-${index}`}
-                  className="min-w-[150px] flex flex-col items-center justify-center flex-shrink-0 mx-4"
-                >
-                  <div className="w-24 h-24 mb-3 flex items-center justify-center bg-white rounded-lg shadow-md">
-                    <LazyImage
-                      src={client.logo}
-                      alt={client.name}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </div>
-                  <p className="text-center text-sm font-medium">{client.name}</p>
-                </div>
-              ))}
-            </motion.div>
+                  <h3 className="font1 text-2xl md:text-4xl lg:text-5xl font-bold">
+                    {expertiseWords[currentIndex]}
+                  </h3>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Simple progress dots */}
+              <div className="flex justify-center items-center mt-6 space-x-2">
+                {expertiseWords.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentIndex ? 'bgBrown w-6' : 'bg-current/30'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* Grid with original animations restored */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
+            {expertiseWords.slice(0, 3).map((expertise, index) => (
+              <motion.div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group cursor-pointer"
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                whileHover={{ scale: 1.02, y: -5 }}
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-3 h-3 bgBrown rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
+                  <h4 className="font2 text-lg md:text-xl">{expertise}</h4>
+                </div>
+                <p className="font3 text-sm md:text-base opacity-70 leading-relaxed">
+                  Excellence in {expertise.toLowerCase()} through innovative strategies and proven methodologies.
+                </p>
+                <div className="w-0 h-[2px] bgBrown mt-4 group-hover:w-full transition-all duration-500"></div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
+
+      {/* Clientele Section */}
+      <div className="w-full p-8 overflow-hidden bgSkin textBrown">
+        <div className="w-[90%] mx-auto">
+          <motion.h2 
+            className="font2 text-4xl md:text-5xl mb-12 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            Our <span className="font3 relative">
+              Clientele
+              <motion.div
+                className="absolute -bottom-2 left-0 w-full h-1 bgBrown rounded-full"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+              />
+            </span>
+          </motion.h2>
+
+          {/* Enhanced Marquee Wrapper */}
+          <div className="relative w-full">
+            {/* Gradient fade edges */}
+            <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-[var(--bg-skin)] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-[var(--bg-skin)] to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="flex overflow-hidden w-full py-4">
+              <motion.div
+                className="flex items-center gap-12"
+                animate={{ x: [0, -100 * clients.length] }}
+                transition={{ 
+                  ease: "linear", 
+                  duration: clients.length *3, // Adjust speed based on number of clients
+                  repeat: Infinity 
+                }}
+                style={{ 
+                  display: "flex",
+                  width: `${200 * clients.length}px` // Dynamic width based on client count
+                }}
+              >
+                {/* Create multiple sets for true seamless effect */}
+                {[...Array(3)].map((_, setIndex) => (
+                  <React.Fragment key={setIndex}>
+                    {clients.map((client, index) => (
+                      <motion.div
+                        key={`set-${setIndex}-${index}`}
+                        className="min-w-[200px] flex flex-col items-center justify-center flex-shrink-0 group cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Enhanced client card */}
+                        <div className="relative w-28 h-28 mb-4 flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-2xl shadow-lg border border-white/30 group-hover:shadow-xl group-hover:bg-white/30 transition-all duration-300">
+                          {/* Decorative corner elements */}
+                          <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-current/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-current/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          
+                          <LazyImage
+                            src={client.logo}
+                            alt={client.name}
+                            className="w-20 h-20 object-contain transition-transform duration-300 group-hover:scale-110"
+                          />
+                          
+                          {/* Hover overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-current/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        
+                        {/* Client name with enhanced styling */}
+                        <div className="text-center">
+                          <p className="font3 text-sm md:text-base font-medium mb-1 group-hover:text-current/80 transition-colors duration-300">
+                            {client.name}
+                          </p>
+                          <div className="w-8 h-0.5 bg-current/40 mx-auto rounded-full group-hover:w-12 group-hover:bg-current/60 transition-all duration-300"></div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Optional: Client stats or additional info */}
+          <motion.div 
+            className="flex justify-center items-center mt-8 space-x-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center">
+              <div className="font2 text-2xl md:text-3xl textBrown">{clients.length}+</div>
+              <div className="font3 text-sm text-current/70">Trusted Clients</div>
+            </div>
+            <div className="w-px h-12 bg-current/30"></div>
+            <div className="text-center">
+              <div className="font2 text-2xl md:text-3xl textBrown">100%</div>
+              <div className="font3 text-sm text-current/70">Satisfaction Rate</div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+
       {/* Blog Cards Section */}
-<div className="w-full py-16 bg-gradient-to-b from-bgSkin to-white">
-  <div className="w-[90%] mx-auto">
-    {/* Enhanced Heading Section */}
-    <motion.div 
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
-      <h2 className="font2 text-4xl md:text-5xl textBrown mb-4">
-        Latest <span className="font3">Insights</span>
-      </h2>
-      <p className="font3 text-lg textBrown opacity-80 max-w-2xl mx-auto">
-        Stay ahead with our expert insights on digital marketing trends, 
-        strategies, and industry best practices
-      </p>
-      <div className="w-20 h-[3px] bgBrown mx-auto mt-6 rounded-full"></div>
-    </motion.div>
+      <div className="w-full py-16 bg-gradient-to-b bgBrown">
+        <div className="w-[90%] mx-auto">
+          {/* Enhanced Heading Section */}
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font2 text-4xl md:text-5xl textSkin mb-4">
+              Latest <span className="font3">Insights</span>
+            </h2>
+            <p className="font3 text-lg textSkin opacity-80 max-w-2xl mx-auto">
+              Stay ahead with our expert insights on digital marketing trends, 
+              strategies, and industry best practices
+            </p>
+            <div className="w-20 h-[3px] bgBrown mx-auto mt-6 rounded-full"></div>
+          </motion.div>
 
-    {/* Enhanced Blog Cards Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* Blog Card 1 */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        viewport={{ once: true }}
-        className="group"
-      >
-        <BlogCard
-          id="1"
-          title="How to Grow Your Business"
-          photo="/ws1.png"
-          content="Learn the best strategies to grow your business and reach new heights. Whether you are a startup or an established business, these tips will help you scale effectively..."
-          author="Marketing Team"
-          date="Dec 15, 2024"
-          readTime="5 min read"
-          category="Business Growth"
-        />
-      </motion.div>
+          {/* Enhanced Blog Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Blog Card 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <BlogCard
+                id="1"
+                title="How to Grow Your Business"
+                photo="/ws1.png"
+                content="Learn the best strategies to grow your business and reach new heights. Whether you are a startup or an established business, these tips will help you scale effectively..."
+                author="Marketing Team"
+                date="Dec 15, 2024"
+                readTime="5 min read"
+                category="Business Growth"
+              />
+            </motion.div>
 
-      {/* Blog Card 2 */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="group"
-      >
-        <BlogCard
-          id="2"
-          title="The Power of Advertising"
-          photo="/ws1.png"
-          content="Advertising is a powerful tool to increase brand awareness and drive sales. Discover how to create impactful campaigns that resonate with your audience..."
-          author="Creative Team"
-          date="Dec 12, 2024"
-          readTime="7 min read"
-          category="Advertising"
-        />
-      </motion.div>
+            {/* Blog Card 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <BlogCard
+                id="2"
+                title="The Power of Advertising"
+                photo="/ws1.png"
+                content="Advertising is a powerful tool to increase brand awareness and drive sales. Discover how to create impactful campaigns that resonate with your audience..."
+                author="Creative Team"
+                date="Dec 12, 2024"
+                readTime="7 min read"
+                category="Advertising"
+              />
+            </motion.div>
 
-      {/* Blog Card 3 */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="group"
-      >
-        <BlogCard
-          id="3"
-          title="Expanding Your Market Reach"
-          photo="/ws1.png"
-          content="Expanding your market reach is essential for long-term success. Explore the steps you need to take to enter new markets and attract a global audience..."
-          author="Strategy Team"
-          date="Dec 10, 2024"
-          readTime="6 min read"
-          category="Market Expansion"
-        />
-      </motion.div>
+            {/* Blog Card 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <BlogCard
+                id="3"
+                title="Expanding Your Market Reach"
+                photo="/ws1.png"
+                content="Expanding your market reach is essential for long-term success. Explore the steps you need to take to enter new markets and attract a global audience..."
+                author="Strategy Team"
+                date="Dec 10, 2024"
+                readTime="6 min read"
+                category="Market Expansion"
+              />
+            </motion.div>
 
-      {/* Blog Card 4 */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="group"
-      >
-        <BlogCard
-          id="4"
-          title="Effective Investor Relations"
-          photo="/ws1.png"
-          content="Building strong relationships with investors is key to securing funding and growing your business. Learn how to communicate effectively and build trust..."
-          author="IR Team"
-          date="Dec 8, 2024"
-          readTime="8 min read"
-          category="Investor Relations"
-        />
-      </motion.div>
-    </div>
+            {/* Blog Card 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="group"
+            >
+              <BlogCard
+                id="4"
+                title="Effective Investor Relations"
+                photo="/ws1.png"
+                content="Building strong relationships with investors is key to securing funding and growing your business. Learn how to communicate effectively and build trust..."
+                author="IR Team"
+                date="Dec 8, 2024"
+                readTime="8 min read"
+                category="Investor Relations"
+              />
+            </motion.div>
+          </div>
 
-    {/* View All Blogs CTA */}
-    <motion.div 
-      className="text-center mt-12"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.5 }}
-      viewport={{ once: true }}
-    >
-      <Link 
-        to="/blogs" 
-        className="inline-flex items-center px-8 py-4 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all shadow-lg group"
-      >
-        View All Articles
-        <svg 
-          className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </Link>
-    </motion.div>
-  </div>
-</div>
+          {/* View All Blogs CTA */}
+          <motion.div 
+            className="text-center mt-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Link 
+              to="/aboutmediatryx" 
+              className="inline-flex items-center px-8 py-4 bgSkin textBrown font3 text-lg rounded-lg hover:bg-opacity-90 transition-all shadow-lg group"
+            >
+              View All Articles
+              <svg 
+                className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
 
 
       {/* Service Sections */}
@@ -388,11 +510,11 @@ export const Homepage = () => {
           </p>
 
           <div className="w-full flex flex-col sm:flex-row mt-8 justify-evenly items-center">
-            {["ws1.png", "ws2.png", "ws3.png"].map((img, index) => (
+            {["ws1.png", "ws3.png", "ws2.png"].map((img, index) => (
               <div key={index} className="flex flex-col items-center justify-between p-5 h-[250px] rounded-lg">
                 <LazyImage src={img} className="w-[100px] h-[100px] object-contain" />
                 <p className="bgBrown textSkin px-5 py-2 rounded-full text-sm sm:text-base">
-                  {["Search engines", "Increasing visibility", "Enhancing Organic Traffic"][index]}
+                  {["Search engines",  "Enhancing Organic Traffic","Increasing visibility"][index]}
                 </p>
               </div>
             ))}

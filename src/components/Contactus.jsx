@@ -16,6 +16,7 @@ const Contactus = () => {
   };
 
   async function sendmail() {
+    const toastid=toast.loading("Sending Email...");
     try {
       if (!name || !email || !subject || !message) {
         return toast.error("Please fill all the fields");
@@ -54,6 +55,9 @@ const Contactus = () => {
     } catch (e) {
       console.log(e);
       toast.error("Error in sending email");
+    }
+    finally{
+      toast.dismiss(toastid);
     }
   }
 
