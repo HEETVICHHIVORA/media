@@ -27,9 +27,9 @@ export const Homepage = () => {
     { name: "NSE", logo: "/NSE LOGO.jpg" },
     { name: "Scholar Sharks", logo: "/Shcolor Shark.jpeg" },
     { name: "Lex5nance", logo: "/Lex5nance Logo.png" },
-    { name: "LearnEng", logo: "https://via.placeholder.com/100" },
+    { name: "LearnEng", logo: "/learneng.jpg" },
     { name: "Lasa Supergenics", logo: "/LASA Logo.jpg" },
-    { name: "Prabhhans Industries", logo: "https://via.placeholder.com/100" },
+    { name: "Prabhhans Industries", logo: "/prabhhans.png" },
   ];
 
   // Video data for the new section
