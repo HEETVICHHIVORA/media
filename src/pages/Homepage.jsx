@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import {Link} from 'react-router-dom'
 import LazyImage from "../components/LazyImage";
 import { AnimatePresence } from "framer-motion";
+import ServiceTabs from "../components/ServiceTabs";
 export const Homepage = () => {
   React.useEffect(() => window.scrollTo(0, 0), []); // One liner
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,51 +76,170 @@ export const Homepage = () => {
   return (
     <div className="bgSkin textBrown">
       <Navbar />
-      
       {/* Hero Section */}
-      <div className="font2 w-full h-[85vh] flex items-center justify-start">
-        <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between">
-          {/* Text on the Left */}
+      <div className="font2 w-full min-h-[70vh] relative overflow-hidden bgSkin">
+        {/* Background Graphics */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-white/10"></div>
+          
+          {/* Floating Shapes */}
+          <div className="absolute top-20 right-10 w-32 h-32 bg-current/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-10 w-48 h-48 bg-current/5 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-24 h-24 border-2 border-current/10 rounded-full"></div>
+          
+          {/* Decorative Lines */}
+          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-current/20 to-transparent"></div>
+          <div className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-current/10 to-transparent"></div>
+        </div>
+
+        <div className="relative w-[90%] mx-auto flex flex-col lg:flex-row-reverse items-center justify-between py-12 lg:py-16 min-h-[70vh]">
+          {/* Image on the Left (Desktop) */}
           <motion.div
-            className="text-left w-full md:w-1/2"
+            className="w-full lg:w-1/2 flex items-center justify-center mb-8 lg:mb-0"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="relative">
+              {/* Image Container with Enhanced Styling */}
+              <div className="relative bg-white/20 backdrop-blur-sm rounded-3xl p-6 shadow-2xl border border-white/30">
+                <LazyImage
+                  src="/herosection.png"
+                  className="rounded-2xl w-full max-w-md lg:max-w-lg"
+                  alt="Mediatryx Services"
+                />
+                
+                {/* Decorative Elements around Image */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bgBrown/20 rounded-full"></div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 border-2 border-current/20 rounded-full"></div>
+              </div>
+              
+              {/* Floating Stats/Badges */}
+              <motion.div
+                className="absolute -bottom-6 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              >
+                <div className="text-center">
+                  <div className="font2 text-xl textBrown">500+</div>
+                  <div className="font3 text-xs textBrown opacity-70">Projects</div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+              >
+                <div className="text-center">
+                  <div className="font2 text-xl textBrown">24/7</div>
+                  <div className="font3 text-xs textBrown opacity-70">Support</div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Text on the Right (Desktop) */}
+          <motion.div
+            className="text-center lg:text-left w-full lg:w-1/2 lg:pr-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              <Typewriter
-                options={{
-                  strings: ["Grow", "Advertise", "Expand"],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 50,
-                }}
+            {/* Enhanced Typography Section */}
+            <div className="relative mb-8">
+              {/* Decorative Line Above Text */}
+              <motion.div
+                className="w-20 h-1 bgBrown rounded-full mb-6 mx-auto lg:mx-0"
+                initial={{ width: 0 }}
+                animate={{ width: 80 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
               />
-            </h1>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              with
-            </h1>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Mediatryx
-            </h1>
+              
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                <Typewriter
+                  options={{
+                    strings: ["Grow", "Advertise", "Expand"],
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 50,
+                  }}
+                />
+              </h1>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+                with
+              </h1>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 relative">
+                Mediatryx
+                {/* Underline Effect */}
+                <motion.div
+                  className="absolute -bottom-2 left-0 lg:left-0 w-full h-2 bgBrown/30 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                />
+              </h1>
 
-            {/* Explore Our Services Button */}
-            <Link
-              to="/services"
-              className="inline-block mt-8 px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg hover:bg-opacity-90 transition-all"
+              {/* Subtitle */}
+              <motion.p
+                className="font3 text-lg md:text-xl mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed opacity-80"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
+                Transform your business with strategic communication, innovative marketing, and proven growth solutions.
+              </motion.p>
+            </div>
+
+            {/* Enhanced Button Section */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
             >
-              Explore Our Services
-            </Link>
-          </motion.div>
+              <Link
+                to="/services"
+                className="group relative inline-block px-8 py-4 bgBrown textSkin font3 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                <span className="relative z-10">Explore Our Services</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              </Link>
 
-          <div className="w-full md:w-1/2 items-center justify-center hidden md:flex">
-            <LazyImage
-              src="/herosection.png"
-              className="rounded-lg"
-            />
-          </div>
+              <Link
+                to="/contactus"
+                className="inline-block px-8 py-4 bg-white/20 backdrop-blur-sm textBrown font3 text-lg rounded-xl border-2 border-current/30 hover:bg-white/30 hover:border-current/50 transition-all duration-300"
+              >
+                Get Started
+              </Link>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              className="flex items-center justify-center lg:justify-start gap-8 mt-8 text-sm opacity-70"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span className="font3">SEBI Compliant</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bgBrown rounded-full"></div>
+                <span className="font3">Expert Team</span>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
+
+        {/* Bottom Decorative Wave */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white/10 to-transparent"></div>
       </div>
+
 
       <div className="w-full flex justify-center">
         <div className="w-50 h-[2px] bgBrown opacity-70"></div>
@@ -198,13 +318,13 @@ export const Homepage = () => {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.1, ease: "easeOut" }}
                   className="bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 md:px-8 md:py-6 border border-white/30"
                 >
-                  <h3 className="font1 text-2xl md:text-4xl lg:text-5xl font-bold">
+                  <h3 className="poppins-bold text-2xl md:text-4xl lg:text-5xl font-bold">
                     {expertiseWords[currentIndex]}
                   </h3>
                 </motion.div>
@@ -361,6 +481,8 @@ export const Homepage = () => {
         </div>
       </div>
 
+       <Contactus/>
+
 
       {/* Blog Cards Section */}
       <div className="w-full py-16 bg-gradient-to-b bgBrown">
@@ -493,175 +615,9 @@ export const Homepage = () => {
       </div>
 
 
-      {/* Service Sections */}
-      <div className="space-y-5 w-[90%] mx-auto">
-        {/* 1. Website & SEO */}
-        <motion.div
-          className="w-full py-12 flex flex-col items-center text-center justify-around"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font2 text-4xl sm:text-5xl">Website and SEO</h2>
-          <p className="font3 text-lg sm:text-xl mt-3">
-            The importance of having a well-designed website.<br />
-            The role of SEO in optimizing websites for:
-          </p>
-
-          <div className="w-full flex flex-col sm:flex-row mt-8 justify-evenly items-center">
-            {["ws1.png", "ws3.png", "ws2.png"].map((img, index) => (
-              <div key={index} className="flex flex-col items-center justify-between p-5 h-[250px] rounded-lg">
-                <LazyImage src={img} className="w-[100px] h-[100px] object-contain" />
-                <p className="bgBrown textSkin px-5 py-2 rounded-full text-sm sm:text-base">
-                  {["Search engines",  "Enhancing Organic Traffic","Increasing visibility"][index]}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* 2. Social Media Marketing */}
-        <motion.div
-          className="w-full py-12 flex flex-col items-center text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold font2">Social Media Marketing (SMM)</h2>
-          <div className="w-full flex flex-col sm:flex-row justify-evenly items-center gap-16 mt-10">
-            {["sm1.png", "sm2.png"].map((img, index) => (
-              <div key={index} className="flex flex-col items-center max-w-[300px]">
-                <LazyImage src={img} className="w-16 h-16 mb-4" />
-                <p className="text-lg font-medium font3">
-                  {["The appeal of social media platforms creating engaging content", "Two-way communication Utilizing analytics for better outcomes"][index]}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* 3. Email Marketing */}
-        <motion.div
-          className="w-full sm:w-[90%] mx-auto py-12 flex flex-col lg:flex-row items-center gap-y-4"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font2 text-4xl sm:text-5xl font-bold sm:w-1/3">
-            Email Marketing
-          </h2>
-
-          <div className="sm:w-2/3 w-full mt-8 sm:mt-0 ">
-            <ul className="text-lg w-full relative font3">
-              {[
-                "Effectiveness of email marketing",
-                "Building an email list",
-                "Creating personalized and targeted campaigns",
-                "Analyzing email metrics"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center space-x-4 py-3 relative w-full">
-                  <span className="text-[#00C1D4] text-2xl">✔</span>
-                  <span className="flex-1">{item}</span>
-                  
-                  {index === 0 && (
-                    <span className="absolute top-0 left-0 w-full border-t-2 border-dotted border-black"></span>
-                  )}
-
-                  <span className="absolute bottom-0 left-0 w-full border-t-2 border-dotted border-black"></span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-
-        {/* 4. Content Marketing */}
-        <motion.div
-          className="w-full sm:w-[90%] mx-auto py-12 flex flex-col"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="font2 text-4xl sm:text-5xl font-bold mb-6 text-center">Content Marketing</h2>
-          <div className="bgBrown textSkin p-6 sm:p-8 rounded-lg shadow-lg">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg">
-              {[
-                "The significance of content marketing",
-                "Building brand authority",
-                "Providing valuable information",
-                "Creating and distributing relevant and engaging content"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <span className="text-white text-2xl">✔</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 5. Pay-Per-Click Advertising */}
-        <motion.div
-          className="w-full sm:w-[90%] mx-auto py-12 text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold font2">
-            Pay-Per-Click <br className="sm:hidden" /> (PPC) Advertising
-          </h2>
-
-          <div className="border-2 border-[#772c47] mt-6 p-6 sm:p-8 rounded-md">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-lg text-left font3">
-              {[
-                "The concept of PPC-based advertising",
-                "Generating immediate and targeted traffic",
-                "Advertising platforms",
-                "Campaign setup",
-                "Keyword optimization",
-                "Performance monitoring"
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <span className="text-xl">▶</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* 6. Influencer Marketing */}
-        <motion.div
-          className="w-full py-12 flex flex-col lg:flex-row gap-y-4 items-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl sm:text-5xl font-bold font2 sm:w-1/3 text-center">Influencer Marketing</h2>
-          <div className="sm:w-2/3 w-full bg-amber-200/[0.3] rounded-md shadow-md font3">
-            <ul className="text-lg">
-              {[
-                "The increasing influence of influencers",
-                "Collaborating with relevant influencers",
-                "Reaching and engaging with specific target audiences",
-                "The importance of authenticity and long-term relationships"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center space-x-3 px-6 py-4 relative">
-                  <span className="text-xl">•</span>
-                  <span className="flex-1">{item}</span>
-                  {index !== 3 && <span className="absolute bottom-0 left-0 w-full border-t border-black"></span>}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      </div>
-
+      {/* Service Tabs Section */}
+      <ServiceTabs />
+      
       {/* NEW: Video Showcase Section */}
       <motion.div 
         className="w-full py-16 bgBrown"
@@ -713,7 +669,7 @@ export const Homepage = () => {
 
           <div className="text-center mt-12">
             <Link 
-              to="/portfolio" 
+              to="/services" 
               className="inline-block px-8 py-4 bg-white textBrown font3 text-lg rounded-lg hover:bg-opacity-90 transition-all shadow-lg font-semibold"
             >
               View Complete Portfolio
@@ -722,7 +678,6 @@ export const Homepage = () => {
         </div>
       </motion.div>
 
-      <Contactus/>
       <Footer/>
     </div>
   );

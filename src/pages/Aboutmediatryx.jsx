@@ -180,7 +180,7 @@ const AboutMediatryx = () => {
                 </div>
                 
                 {/* Floating stats or badges */}
-                {/* <motion.div
+                <motion.div
                   className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50"
                   variants={fadeInUp}
                   transition={{ delay: 0.5 }}
@@ -200,7 +200,7 @@ const AboutMediatryx = () => {
                     <div className="font2 text-2xl textBrown">100+</div>
                     <div className="font3 text-sm textBrown opacity-70">Happy Clients</div>
                   </div>
-                </motion.div> */}
+                </motion.div>
               </div>
             </motion.div>
           </div>
