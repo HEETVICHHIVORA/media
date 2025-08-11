@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import BlogCard from "../components/BlogCard";
-import Contactus from "../components/Contactus";
 import Footer from "../components/Footer";
 import {Link} from 'react-router-dom'
 import LazyImage from "../components/LazyImage";
 import { AnimatePresence } from "framer-motion";
 import ServiceTabs from "../components/ServiceTabs";
+
 export const Homepage = () => {
   React.useEffect(() => window.scrollTo(0, 0), []); // One liner
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -240,7 +240,6 @@ export const Homepage = () => {
         <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white/10 to-transparent"></div>
       </div>
 
-
       <div className="w-full flex justify-center">
         <div className="w-50 h-[2px] bgBrown opacity-70"></div>
       </div>
@@ -376,7 +375,6 @@ export const Homepage = () => {
         </div>
       </div>
 
-
       {/* Clientele Section */}
       <div className="w-full p-8 overflow-hidden bgSkin textBrown">
         <div className="w-[90%] mx-auto">
@@ -481,7 +479,107 @@ export const Homepage = () => {
         </div>
       </div>
 
-       <Contactus/>
+      {/* NEW: Contact Us Strip - Replaces Contactus Component */}
+      <motion.div 
+  className="w-full py-6 bgSkin relative overflow-hidden border-y border-current/10"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
+  <div className="relative w-[98%] mx-auto">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
+      {/* Left side - Enhanced text content */}
+      <motion.div 
+        className="text-center md:text-left flex-1 md:pr-8"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="font2 text-2xl md:text-3xl lg:text-4xl textBrown mb-2">
+          Ready to Transform Your Business?
+        </h2>
+        <p className="font3 text-base md:text-lg textBrown opacity-70 leading-relaxed max-w-2xl">
+          Get in touch with our expert team and start your journey towards success today.
+        </p>
+      </motion.div>
+
+      {/* Center - Additional info */}
+      <motion.div 
+        className="hidden lg:flex flex-col items-center text-center px-6 border-l border-r border-current/20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex items-center gap-4 mb-2">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <span className="font3 text-sm textBrown opacity-70">Free Consultation</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+            <span className="font3 text-sm textBrown opacity-70">24/7 Support</span>
+          </div>
+        </div>
+        <p className="font3 text-xs textBrown opacity-60">Quick Response Guaranteed</p>
+      </motion.div>
+
+      {/* Right side - Enhanced button area */}
+      <motion.div 
+        className="flex-shrink-0 flex flex-col sm:flex-row items-center gap-3"
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <Link 
+          to="/contactus" 
+          className="group inline-flex items-center px-8 py-3 bgBrown textSkin font3 text-lg rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-semibold"
+        >
+          <span className="mr-2">Contact Us</span>
+          <svg 
+            className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
+        
+        <div className="text-center sm:text-right">
+          <p className="font3 text-xs textBrown opacity-60">or call us at</p>
+          <p className="font3 text-sm textBrown font-semibold">+91 XXXX-XXXX</p>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Bottom stats bar - Mobile visible */}
+    <motion.div 
+      className="lg:hidden flex justify-center items-center gap-6 mt-4 pt-4 border-t border-current/10"
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      viewport={{ once: true }}
+    >
+      <div className="flex items-center gap-2">
+        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+        <span className="font3 text-xs textBrown opacity-70">Free Consultation</span>
+      </div>
+      <div className="w-px h-3 bg-current/30"></div>
+      <div className="flex items-center gap-2">
+        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+        <span className="font3 text-xs textBrown opacity-70">24/7 Support</span>
+      </div>
+      <div className="w-px h-3 bg-current/30"></div>
+      <span className="font3 text-xs textBrown opacity-60">Quick Response</span>
+    </motion.div>
+  </div>
+</motion.div>
+
+
 
 
       {/* Blog Cards Section */}
@@ -613,7 +711,6 @@ export const Homepage = () => {
           </motion.div>
         </div>
       </div>
-
 
       {/* Service Tabs Section */}
       <ServiceTabs />

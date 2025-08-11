@@ -43,23 +43,81 @@ const ServiceTabs = () => {
       title: "Social Media Marketing (SMM)",
       icon: "📱",
       content: (
-        <div className="flex flex-col items-center text-center">
-          <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-12 mt-8">
-            {["sm1.png", "sm2.png"].map((img, index) => (
+        <div className="w-full">
+          {/* Introduction Text */}
+          <div className="text-center mb-12">
+            <p className="font3 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed textBrown">
+              Harness the power of social media platforms to build meaningful connections with your audience 
+              and drive business growth through strategic content and engagement.
+            </p>
+          </div>
+
+          {/* Main Content Cards */}
+          <div className="w-full flex flex-col lg:flex-row justify-center items-stretch gap-8">
+            {[
+              {
+                img: "sm1.png",
+                title: "Content Strategy & Creation",
+                description: "The appeal of social media platforms creating engaging content that resonates with your target audience and builds brand awareness"
+              },
+              {
+                img: "sm2.png", 
+                title: "Analytics & Optimization",
+                description: "Two-way communication utilizing analytics for better outcomes and continuous improvement of your social media performance"
+              }
+            ].map((item, index) => (
               <motion.div 
                 key={index} 
-                className="flex flex-col items-center max-w-[400px] w-full bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm rounded-2xl p-10 border border-white/30 hover:border-white/50 shadow-xl group"
+                className="flex flex-col items-center w-full max-w-[450px] bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm rounded-2xl p-10 border border-white/30 hover:border-white/50 shadow-xl group"
                 whileHover={{ y: -5, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-white/30 to-white/15 rounded-full flex items-center justify-center mb-8 group-hover:shadow-lg transition-all duration-300">
-                  <LazyImage src={img} className="w-16 h-16 group-hover:scale-110 transition-transform duration-300" />
+                {/* Icon Container */}
+                <div className="w-28 h-28 bg-gradient-to-br from-white/30 to-white/15 rounded-full flex items-center justify-center mb-8 group-hover:shadow-lg transition-all duration-300">
+                  <LazyImage src={item.img} className="w-20 h-20 group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <p className="text-lg font-medium font3 leading-relaxed text-center">
-                  {["The appeal of social media platforms creating engaging content", "Two-way communication Utilizing analytics for better outcomes"][index]}
+
+                {/* Title */}
+                <h4 className="font2 text-xl textBrown mb-4 text-center">
+                  {item.title}
+                </h4>
+
+                {/* Description */}
+                <p className="text-base font3 leading-relaxed text-center textBrown opacity-90">
+                  {item.description}
                 </p>
+
+                {/* Decorative Element */}
+                <div className="w-16 h-1 bgBrown rounded-full mt-6 opacity-60"></div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Bottom Features Section */}
+          <div className="mt-16">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/30">
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-3 h-8 bgBrown rounded-full mr-3"></div>
+                <h4 className="font2 text-xl textBrown">Our SMM Approach</h4>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  "Platform Strategy",
+                  "Content Creation", 
+                  "Community Management",
+                  "Performance Analytics"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center justify-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span className="font3 text-center textBrown text-sm sm:text-base">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -89,7 +147,7 @@ const ServiceTabs = () => {
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="w-8 h-8 bg-[#00C1D4] rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-8 h-8 bgBrown rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-white text-sm font-bold">✓</span>
                     </div>
                     <span className="flex-1 text-base sm:text-lg">{item}</span>
@@ -102,48 +160,54 @@ const ServiceTabs = () => {
       )
     },
     {
-      id: 3,
-      title: "Content Marketing",
-      icon: "📝",
-      content: (
-        <div className="w-full flex justify-center">
-          <div className="w-full max-w-5xl">
-            <div className="bgBrown textSkin p-10 rounded-2xl shadow-2xl border-2 border-white/20 relative overflow-hidden">
-              {/* Decorative background pattern */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
-              
-              <div className="relative">
-                <div className="flex items-center mb-8">
-                  <div className="w-3 h-10 bg-white/40 rounded-full mr-4"></div>
-                  <h3 className="font2 text-2xl">Our Approach</h3>
-                </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {[
-                    "The significance of content marketing",
-                    "Building brand authority",
-                    "Providing valuable information",
-                    "Creating and distributing relevant and engaging content"
-                  ].map((item, index) => (
-                    <motion.div 
-                      key={index} 
-                      className="flex items-center space-x-4 p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 group"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <div className="w-8 h-8 bg-white/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-white/40 transition-all duration-300">
-                        <span className="text-white text-sm font-bold">✓</span>
-                      </div>
-                      <span className="text-base sm:text-lg">{item}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+  id: 3,
+  title: "Content Marketing",
+  icon: "📝",
+  content: (
+    <div className="w-full flex justify-center">
+      <div className="w-full max-w-5xl">
+        {/* Changed from dark brown to light theme */}
+        <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 relative overflow-hidden">
+          {/* Changed decorative elements to brown instead of white */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#772c47]/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#772c47]/10 rounded-full translate-y-12 -translate-x-12"></div>
+          
+          <div className="relative p-10">
+            <div className="flex items-center mb-8">
+              {/* Changed from white to brown accent */}
+              <div className="w-3 h-10 bgBrown rounded-full mr-4"></div>
+              {/* Changed text color from textSkin to textBrown */}
+              <h3 className="font2 text-2xl textBrown">Our Approach</h3>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {[
+                "The significance of content marketing",
+                "Building brand authority",
+                "Providing valuable information",
+                "Creating and distributing relevant and engaging content"
+              ].map((item, index) => (
+                <motion.div 
+                  key={index} 
+                  className="flex items-center space-x-4 p-4 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/20"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {/* Changed from white to brown checkmarks */}
+                  <div className="w-8 h-8 bgBrown rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                    <span className="text-white text-sm font-bold">✓</span>
+                  </div>
+                  {/* Changed text color from textSkin to textBrown */}
+                  <span className="text-base sm:text-lg textBrown">{item}</span>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
-      )
-    },
+      </div>
+    </div>
+  )
+}
+,
     {
       id: 4,
       title: "Pay-Per-Click (PPC) Advertising",
@@ -152,7 +216,6 @@ const ServiceTabs = () => {
         <div className="w-full flex justify-center">
           <div className="w-full max-w-5xl">
             <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm border-2 border-[#772c47]/50 p-10 rounded-2xl shadow-xl relative overflow-hidden">
-              {/* Decorative elements */}
               <div className="absolute top-4 right-4 w-16 h-16 border-2 border-[#772c47]/30 rounded-full"></div>
               <div className="absolute bottom-4 left-4 w-12 h-12 bg-[#772c47]/20 rounded-full"></div>
               
@@ -194,13 +257,12 @@ const ServiceTabs = () => {
       content: (
         <div className="w-full flex justify-center">
           <div className="w-full max-w-4xl">
-            <div className="bg-gradient-to-br from-amber-200/40 to-amber-100/20 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-300/40 relative overflow-hidden">
-              {/* Decorative background */}
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-300/50 to-amber-500/50"></div>
+            <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm rounded-2xl shadow-xl border border-white/30 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#772c47]/50 to-[#772c47]/30"></div>
               
               <div className="p-10">
                 <div className="flex items-center mb-8">
-                  <div className="w-3 h-10 bg-amber-600 rounded-full mr-4"></div>
+                  <div className="w-3 h-10 bgBrown rounded-full mr-4"></div>
                   <h3 className="font2 text-2xl textBrown">Strategy Framework</h3>
                 </div>
                 <ul className="text-lg font3 space-y-2">
@@ -216,7 +278,7 @@ const ServiceTabs = () => {
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <div className="w-3 h-3 bg-amber-600 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                      <div className="w-3 h-3 bgBrown rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
                       <span className="flex-1 text-base sm:text-lg">{item}</span>
                     </motion.li>
                   ))}
@@ -230,74 +292,75 @@ const ServiceTabs = () => {
   ];
 
   return (
-    <div className="w-[90%] max-w-6xl mx-auto py-12">
-      {/* Tab Navigation - Click Only */}
-      <div className="flex flex-wrap justify-center gap-3 mb-16">
-        {services.map((service) => (
-          <motion.button
-            key={service.id}
-            className={`px-6 py-4 rounded-xl font3 text-sm md:text-base transition-all duration-300 border ${
-              activeTab === service.id
-                ? 'bgBrown textSkin shadow-xl border-white/30'
-                : 'bg-white/10 textBrown hover:bg-white/20 border-white/20 hover:border-white/40'
-            }`}
-            onClick={() => setActiveTab(service.id)}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="mr-3 text-lg">{service.icon}</span>
-            <span className="hidden sm:inline">{service.title}</span>
-            <span className="sm:hidden">{service.title.split(' ')[0]}</span>
-          </motion.button>
-        ))}
-      </div>
-
-      {/* Content Area */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
-          className="min-h-[500px]"
-        >
-          {/* Header for active service */}
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <h2 className="font2 text-3xl md:text-5xl mb-6 flex items-center justify-center gap-4">
-              <span className="text-4xl">{services[activeTab].icon}</span>
-              {services[activeTab].title}
+    <div className="w-[95%] max-w-7xl mx-auto py-12">
+      <div className="flex flex-col lg:flex-row gap-8 min-h-[600px]">
+        
+        {/* Left Side - Tab Navigation with Hover */}
+        <div className="lg:w-1/3 xl:w-1/4 flex flex-col">
+          <div className="sticky top-24">
+            <h2 className="font2 text-2xl md:text-3xl textBrown mb-8 text-center lg:text-left">
+              Our Services
             </h2>
-            <div className="w-24 h-1 bgBrown rounded-full mx-auto"></div>
-          </motion.div>
+            <div className="flex flex-col gap-3">
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className={`px-6 py-5 rounded-xl font3 text-base transition-all duration-300 border cursor-pointer ${
+                    activeTab === service.id
+                      ? 'bgBrown textSkin shadow-xl border-white/30 scale-105'
+                      : 'bg-white/10 textBrown hover:bg-white/20 border-white/20 hover:border-white/40 hover:scale-102'
+                  }`}
+                  onMouseEnter={() => setActiveTab(service.id)}
+                  whileHover={{ x: activeTab === service.id ? 0 : 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="flex items-center">
+                    <span className="text-xl mr-4 flex-shrink-0">{service.icon}</span>
+                    <span className="font-medium leading-tight">{service.title}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-          {/* Content */}
-          <motion.div
-            className="rounded-2xl"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            {services[activeTab].content}
-          </motion.div>
-        </motion.div>
-      </AnimatePresence>
+        {/* Right Side - Content Area */}
+        <div className="lg:w-2/3 xl:w-3/4 flex-1">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="min-h-[500px]"
+            >
+              {/* Header for active service */}
+              <motion.div
+                className="mb-12"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.1 }}
+              >
+                <h3 className="font2 text-2xl md:text-4xl mb-6 flex items-center gap-4 textBrown">
+                  <span className="text-3xl md:text-4xl">{services[activeTab].icon}</span>
+                  {services[activeTab].title}
+                </h3>
+                <div className="w-20 h-1 bgBrown rounded-full"></div>
+              </motion.div>
 
-      {/* Progress Indicator */}
-      <div className="flex justify-center mt-12 space-x-3">
-        {services.map((_, index) => (
-          <motion.div
-            key={index}
-            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-              activeTab === index ? 'bgBrown w-10' : 'bg-current/30 w-2 hover:w-6 hover:bg-current/50'
-            }`}
-            onClick={() => setActiveTab(index)}
-            whileHover={{ scale: 1.2 }}
-          />
-        ))}
+              {/* Content */}
+              <motion.div
+                className="rounded-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                {services[activeTab].content}
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
